@@ -25,7 +25,7 @@ def normalize(filename: str) -> List[List[str]]:
     Parameters:
         filename: A filename of the CSV file to be normalized.
     """
-    with open(filename, 'r') as file:
+    with open(filename, "r") as file:
         reader = csv.reader(file)
         data = [line for line in reader]
 
@@ -36,7 +36,7 @@ def normalize(filename: str) -> List[List[str]]:
 
         for item in row:
             if len(item) > 0:
-                if item[-1] == '\n':
+                if item[-1] == "\n":
                     new_row.append(item[:-1].strip())
                 else:
                     new_row.append(item.strip())
@@ -48,20 +48,18 @@ def normalize(filename: str) -> List[List[str]]:
 
 def main() -> None:
     """The main function."""
-    parser = argparse.ArgumentParser(description='Process the arguments.')
+    parser = argparse.ArgumentParser(description="Process the arguments.")
 
-    parser.add_argument('--filename',
-                        type=str,
-                        help='specifies the filename.')
+    parser.add_argument("--filename", type=str, help="specifies the filename.")
 
     args = parser.parse_args()
 
     filename = args.filename
 
-    with open('./test.csv', 'w') as test:
+    with open("./test.csv", "w") as test:
         writer = csv.writer(test)
         writer.writerows(normalize(filename))
 
 
-if __name__ == '__main__':
+if __name__ == "__main__":
     main()

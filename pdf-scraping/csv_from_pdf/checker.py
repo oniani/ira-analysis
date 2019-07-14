@@ -71,13 +71,19 @@ def verify_ad_end_date(path_csv: str, path_pdf: str) -> bool:
                     return False
 
             # Note that #3394, for some reason, was not parsed by pdftotext
-            elif str(row["Ad End Date"]) == "N/A" and str(row["Ad ID"]) != "3394":
+            elif (
+                str(row["Ad End Date"]) == "N/A"
+                and str(row["Ad ID"]) != "3394"
+            ):
                 return False
 
     elif path_csv == "../data/csv/year-2015/2015-quarter-3.csv":
         for _, row in rows.iterrows():
             # Note that #131 is not parsed by pdftotext (as we only parse the first page)
-            if str(row["Ad ID"]) in without_ad_end_date and str(row["Ad ID"]) != "131":
+            if (
+                str(row["Ad ID"]) in without_ad_end_date
+                and str(row["Ad ID"]) != "131"
+            ):
                 if str(row["Ad End Date"]) != "N/A":
                     return False
 
@@ -87,12 +93,17 @@ def verify_ad_end_date(path_csv: str, path_pdf: str) -> bool:
     elif path_csv == "../data/csv/year-2016/2016-quarter-2.csv":
         for _, row in rows.iterrows():
             # Note that #131 is not parsed by pdftotext (as we only parse the first page)
-            if str(row["Ad ID"]) in without_ad_end_date and str(row["Ad ID"]) != "131":
+            if (
+                str(row["Ad ID"]) in without_ad_end_date
+                and str(row["Ad ID"]) != "131"
+            ):
                 if str(row["Ad End Date"]) != "N/A":
                     return False
 
             # This is all because pdftotext fails to parse correctly
-            elif str(row["Ad End Date"]) == "N/A" and str(row["Ad ID"]) not in {
+            elif str(row["Ad End Date"]) == "N/A" and str(
+                row["Ad ID"]
+            ) not in {
                 "3499",
                 "3495",
                 "3496",
@@ -128,17 +139,17 @@ def verify_ad_end_date(path_csv: str, path_pdf: str) -> bool:
     elif path_csv == "../data/csv/year-2016/2016-quarter-4.csv":
         for _, row in rows.iterrows():
             # Note that #131 is not parsed by pdftotext (as we only parse the first page)
-            if str(row["Ad ID"]) in without_ad_end_date and str(row["Ad ID"]) != "131":
+            if (
+                str(row["Ad ID"]) in without_ad_end_date
+                and str(row["Ad ID"]) != "131"
+            ):
                 if str(row["Ad End Date"]) != "N/A":
                     return False
 
             # This is all because pdftotext fails to parse correctly
-            elif str(row["Ad End Date"]) == "N/A" and str(row["Ad ID"]) not in {
-                "2745",
-                "3004",
-                "2747",
-                "2742",
-            }:
+            elif str(row["Ad End Date"]) == "N/A" and str(
+                row["Ad ID"]
+            ) not in {"2745", "3004", "2747", "2742"}:
                 return False
 
     elif path_csv == "../data/csv/year-2017/2017-quarter-1.csv":
@@ -147,7 +158,10 @@ def verify_ad_end_date(path_csv: str, path_pdf: str) -> bool:
                 if str(row["Ad End Date"]) != "N/A":
                     return False
 
-            elif str(row["Ad End Date"]) == "N/A" and str(row["Ad ID"]) != "3245":
+            elif (
+                str(row["Ad End Date"]) == "N/A"
+                and str(row["Ad ID"]) != "3245"
+            ):
                 return False
 
     else:
@@ -155,12 +169,22 @@ def verify_ad_end_date(path_csv: str, path_pdf: str) -> bool:
             if str(row["Ad ID"]) in without_ad_end_date:
                 if str(row["Ad End Date"]) != "N/A":
                     # Debugging
-                    print(path_csv, path_pdf, "\033[0;31mMISSING N/A\033[0m\n\n", row)
+                    print(
+                        path_csv,
+                        path_pdf,
+                        "\033[0;31mMISSING N/A\033[0m\n\n",
+                        row,
+                    )
                     # return False
 
             elif str(row["Ad End Date"]) == "N/A":
                 # Debugging
-                print(path_csv, path_pdf, "\033[0;31mREDUNDANT N/A\033[0m\n\n", row)
+                print(
+                    path_csv,
+                    path_pdf,
+                    "\033[0;31mREDUNDANT N/A\033[0m\n\n",
+                    row,
+                )
                 # return False
 
     return True
@@ -210,17 +234,26 @@ def main() -> None:
 
     # 2015 Quarter 2
     assert (
-        check_num_of_lines("../data/csv/year-2015/2015-Quarter-2.csv", _2015[0]) is True
+        check_num_of_lines(
+            "../data/csv/year-2015/2015-Quarter-2.csv", _2015[0]
+        )
+        is True
     )
 
     # 2015 Quarter 3
     assert (
-        check_num_of_lines("../data/csv/year-2015/2015-Quarter-3.csv", _2015[1]) is True
+        check_num_of_lines(
+            "../data/csv/year-2015/2015-Quarter-3.csv", _2015[1]
+        )
+        is True
     )
 
     # 2015 Quarter 4
     assert (
-        check_num_of_lines("../data/csv/year-2015/2015-Quarter-4.csv", _2015[2]) is True
+        check_num_of_lines(
+            "../data/csv/year-2015/2015-Quarter-4.csv", _2015[2]
+        )
+        is True
     )
 
     # #########################################################################
@@ -229,22 +262,34 @@ def main() -> None:
 
     # 2016 Quarter 1
     assert (
-        check_num_of_lines("../data/csv/year-2016/2016-Quarter-1.csv", _2016[0]) is True
+        check_num_of_lines(
+            "../data/csv/year-2016/2016-Quarter-1.csv", _2016[0]
+        )
+        is True
     )
 
     # 2016 Quarter 2
     assert (
-        check_num_of_lines("../data/csv/year-2016/2016-Quarter-2.csv", _2016[1]) is True
+        check_num_of_lines(
+            "../data/csv/year-2016/2016-Quarter-2.csv", _2016[1]
+        )
+        is True
     )
 
     # 2016 Quarter 3
     assert (
-        check_num_of_lines("../data/csv/year-2016/2016-Quarter-3.csv", _2016[2]) is True
+        check_num_of_lines(
+            "../data/csv/year-2016/2016-Quarter-3.csv", _2016[2]
+        )
+        is True
     )
 
     # 2016 Quarter 4
     assert (
-        check_num_of_lines("../data/csv/year-2016/2016-Quarter-4.csv", _2016[3]) is True
+        check_num_of_lines(
+            "../data/csv/year-2016/2016-Quarter-4.csv", _2016[3]
+        )
+        is True
     )
 
     # #########################################################################
@@ -253,24 +298,34 @@ def main() -> None:
 
     # 2017 Quarter 1
     assert (
-        check_num_of_lines("../data/csv/year-2017/2017-Quarter-1.csv", _2017[0]) is True
+        check_num_of_lines(
+            "../data/csv/year-2017/2017-Quarter-1.csv", _2017[0]
+        )
+        is True
     )
 
     # 2017 Quarter 2 April
     assert (
-        check_num_of_lines("../data/csv/year-2017/2017-Quarter-2-April.csv", _2017[1])
+        check_num_of_lines(
+            "../data/csv/year-2017/2017-Quarter-2-April.csv", _2017[1]
+        )
         is True
     )
 
     # 2017 Quarter 2 May
     assert (
-        check_num_of_lines("../data/csv/year-2017/2017-Quarter-2-May.csv", _2017[2])
+        check_num_of_lines(
+            "../data/csv/year-2017/2017-Quarter-2-May.csv", _2017[2]
+        )
         is True
     )
 
     # 2017 Quarter 3
     assert (
-        check_num_of_lines("../data/csv/year-2017/2017-Quarter-3.csv", _2017[3]) is True
+        check_num_of_lines(
+            "../data/csv/year-2017/2017-Quarter-3.csv", _2017[3]
+        )
+        is True
     )
 
     # #########################################################################
@@ -283,17 +338,26 @@ def main() -> None:
 
     # 2015 Quarter 2
     assert (
-        verify_ad_end_date("../data/csv/year-2015/2015-quarter-2.csv", _2015[0]) is True
+        verify_ad_end_date(
+            "../data/csv/year-2015/2015-quarter-2.csv", _2015[0]
+        )
+        is True
     )
 
     # 2015 Quarter 3
     assert (
-        verify_ad_end_date("../data/csv/year-2015/2015-quarter-3.csv", _2015[1]) is True
+        verify_ad_end_date(
+            "../data/csv/year-2015/2015-quarter-3.csv", _2015[1]
+        )
+        is True
     )
 
     # 2015 Quarter 4
     assert (
-        verify_ad_end_date("../data/csv/year-2015/2015-quarter-4.csv", _2015[2]) is True
+        verify_ad_end_date(
+            "../data/csv/year-2015/2015-quarter-4.csv", _2015[2]
+        )
+        is True
     )
 
     # #########################################################################
@@ -302,22 +366,34 @@ def main() -> None:
 
     # 2016 Quarter 1
     assert (
-        verify_ad_end_date("../data/csv/year-2016/2016-Quarter-1.csv", _2016[0]) is True
+        verify_ad_end_date(
+            "../data/csv/year-2016/2016-Quarter-1.csv", _2016[0]
+        )
+        is True
     )
 
     # 2016 Quarter 2
     assert (
-        verify_ad_end_date("../data/csv/year-2016/2016-Quarter-2.csv", _2016[1]) is True
+        verify_ad_end_date(
+            "../data/csv/year-2016/2016-Quarter-2.csv", _2016[1]
+        )
+        is True
     )
 
     # 2016 Quarter 3
     assert (
-        verify_ad_end_date("../data/csv/year-2016/2016-Quarter-3.csv", _2016[2]) is True
+        verify_ad_end_date(
+            "../data/csv/year-2016/2016-Quarter-3.csv", _2016[2]
+        )
+        is True
     )
 
     # 2016 Quarter 4
     assert (
-        verify_ad_end_date("../data/csv/year-2016/2016-Quarter-4.csv", _2016[3]) is True
+        verify_ad_end_date(
+            "../data/csv/year-2016/2016-Quarter-4.csv", _2016[3]
+        )
+        is True
     )
 
     # #########################################################################
@@ -326,24 +402,34 @@ def main() -> None:
 
     # 2017 Quarter 1
     assert (
-        verify_ad_end_date("../data/csv/year-2017/2017-Quarter-1.csv", _2017[0]) is True
+        verify_ad_end_date(
+            "../data/csv/year-2017/2017-Quarter-1.csv", _2017[0]
+        )
+        is True
     )
 
     # 2017 Quarter 2 April
     assert (
-        verify_ad_end_date("../data/csv/year-2017/2017-Quarter-2-April.csv", _2017[1])
+        verify_ad_end_date(
+            "../data/csv/year-2017/2017-Quarter-2-April.csv", _2017[1]
+        )
         is True
     )
 
     # 2017 Quarter 2 May
     assert (
-        verify_ad_end_date("../data/csv/year-2017/2017-Quarter-2-May.csv", _2017[2])
+        verify_ad_end_date(
+            "../data/csv/year-2017/2017-Quarter-2-May.csv", _2017[2]
+        )
         is True
     )
 
     # 2017 Quarter 3
     assert (
-        check_num_of_lines("../data/csv/year-2017/2017-Quarter-3.csv", _2017[3]) is True
+        check_num_of_lines(
+            "../data/csv/year-2017/2017-Quarter-3.csv", _2017[3]
+        )
+        is True
     )
 
     # #########################################################################
@@ -355,36 +441,52 @@ def main() -> None:
     # #########################################################################
 
     # 2015 Quarter 2
-    assert check_for_dupe_id("../data/csv/year-2015/2015-quarter-2.csv") is True
+    assert (
+        check_for_dupe_id("../data/csv/year-2015/2015-quarter-2.csv") is True
+    )
 
     # 2015 Quarter 3
-    assert check_for_dupe_id("../data/csv/year-2015/2015-quarter-3.csv") is True
+    assert (
+        check_for_dupe_id("../data/csv/year-2015/2015-quarter-3.csv") is True
+    )
 
     # 2015 Quarter 4
-    assert check_for_dupe_id("../data/csv/year-2015/2015-quarter-4.csv") is True
+    assert (
+        check_for_dupe_id("../data/csv/year-2015/2015-quarter-4.csv") is True
+    )
 
     # #########################################################################
     # Y E A R  2 0 1 6
     # #########################################################################
 
     # 2016 Quarter 1
-    assert check_for_dupe_id("../data/csv/year-2016/2016-Quarter-1.csv") is True
+    assert (
+        check_for_dupe_id("../data/csv/year-2016/2016-Quarter-1.csv") is True
+    )
 
     # 2016 Quarter 2
-    assert check_for_dupe_id("../data/csv/year-2016/2016-Quarter-2.csv") is True
+    assert (
+        check_for_dupe_id("../data/csv/year-2016/2016-Quarter-2.csv") is True
+    )
 
     # 2016 Quarter 3
-    assert check_for_dupe_id("../data/csv/year-2016/2016-Quarter-3.csv") is True
+    assert (
+        check_for_dupe_id("../data/csv/year-2016/2016-Quarter-3.csv") is True
+    )
 
     # 2016 Quarter 4
-    assert check_for_dupe_id("../data/csv/year-2016/2016-Quarter-4.csv") is True
+    assert (
+        check_for_dupe_id("../data/csv/year-2016/2016-Quarter-4.csv") is True
+    )
 
     # #########################################################################
     # Y E A R  2 0 1 7
     # #########################################################################
 
     # 2017 Quarter 1
-    assert check_for_dupe_id("../data/csv/year-2017/2017-Quarter-1.csv") is True
+    assert (
+        check_for_dupe_id("../data/csv/year-2017/2017-Quarter-1.csv") is True
+    )
 
     # 2017 Quarter 2 April
     # assert (

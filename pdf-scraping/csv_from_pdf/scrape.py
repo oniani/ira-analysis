@@ -29,7 +29,9 @@ def scrape_by_keyword(text: List[str], keyword: str, until: str) -> str:
     In general, it is a terrible idea to have a mutable keyword
     formal parameter, but we are aware of it here.
     """
-    text = [line.strip() + "\n" for line in text.strip().split("\n") if line != ""]
+    text = [
+        line.strip() + "\n" for line in text.strip().split("\n") if line != ""
+    ]
 
     parsed = ""
 
@@ -91,9 +93,9 @@ def get_data(filepath: str, categories: Dict[str, str]) -> List[str]:
     for key in all_keywords:
         if key not in keywords:
             unavailable_keys.append(key)
- 
+
     for key in unavailable_keys:
-        categories[key] = 'N/A'
+        categories[key] = "N/A"
 
     for keyword, until in zip(keywords, keywords[1:]):
         categories[keyword] = scrape_by_keyword(page, keyword, until)
@@ -105,7 +107,9 @@ def main() -> None:
     """The main function."""
     parser = argparse.ArgumentParser(description="Process the arguments.")
 
-    parser.add_argument("--dir", type=str, default=".", help="specify the directory.")
+    parser.add_argument(
+        "--dir", type=str, default=".", help="specify the directory."
+    )
 
     args = parser.parse_args()
 

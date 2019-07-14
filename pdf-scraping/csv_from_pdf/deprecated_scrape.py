@@ -49,17 +49,19 @@ def pdf_scraper(filename: str, categories: Dict[str, int]) -> List[List[str]]:
 def main() -> None:
     """This is a main function."""
     # All category names mapped to the start index of the data related to it
-    categories = {"Ad ID": 6,
-                  "Ad Landing Page": 16,
-                  "Ad Targeting Location": 23,
-                  "Excluded Connections": 22,
-                  "Age": 5,
-                  "Language": 10,
-                  "Placements": 12,
-                  "Ad Impressions": 15,
-                  "Ad Clicks": 10,
-                  "Ad Spend": 9,
-                  "Ad Creation Date": 17}
+    categories = {
+        "Ad ID": 6,
+        "Ad Landing Page": 16,
+        "Ad Targeting Location": 23,
+        "Excluded Connections": 22,
+        "Age": 5,
+        "Language": 10,
+        "Placements": 12,
+        "Ad Impressions": 15,
+        "Ad Clicks": 10,
+        "Ad Spend": 9,
+        "Ad Creation Date": 17,
+    }
 
     # Get the list of keys out of the dicitonary
     csv_data = [list(categories)]

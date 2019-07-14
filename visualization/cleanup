@@ -1,0 +1,9 @@
+#!/usr/local/bin/zsh
+
+# Filename: visualize
+# Modified: July 14, 2019 01:28:12 AM
+# Author:   David Oniani
+# License:  GNU General Public License v3.0
+
+# Delete all .png files
+find . -name "*.png" -delete

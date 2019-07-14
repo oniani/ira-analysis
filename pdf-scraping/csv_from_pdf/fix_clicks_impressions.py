@@ -19,7 +19,9 @@ import csv
 
 def main() -> None:
     parser = argparse.ArgumentParser(description="Process the arguments.")
-    parser.add_argument("--path", type=str, default=".", help="specify the directory.")
+    parser.add_argument(
+        "--path", type=str, default=".", help="specify the directory."
+    )
     args = parser.parse_args()
     path = args.path
 

@@ -52,9 +52,11 @@ def plot_regression(
 
     columns = columns.reset_index(drop=True)
 
-    sns.regplot(x=independent, y=dependent, data=columns)
-    plt.title(title)
-    plt.show()
+    sns_plot = sns.regplot(x=independent, y=dependent, data=columns)
+    sns_plot.set_title(title)
+    figure = sns_plot.get_figure()
+    figure_name = "-".join(list(map(lambda x: x.lower(), title.split())))
+    figure.savefig(figure_name)
 
 
 def main():
