@@ -1,0 +1,13 @@
+python3 fix_clicks_impressions.py --path=../data/csv/year-2015/2015-Quarter-2.csv
+python3 fix_clicks_impressions.py --path=../data/csv/year-2015/2015-Quarter-3.csv
+python3 fix_clicks_impressions.py --path=../data/csv/year-2015/2015-Quarter-4.csv
+
+python3 fix_clicks_impressions.py --path=../data/csv/year-2016/2016-Quarter-1.csv
+python3 fix_clicks_impressions.py --path=../data/csv/year-2016/2016-Quarter-2.csv
+python3 fix_clicks_impressions.py --path=../data/csv/year-2016/2016-Quarter-3.csv
+python3 fix_clicks_impressions.py --path=../data/csv/year-2016/2016-Quarter-4.csv
+
+python3 fix_clicks_impressions.py --path=../data/csv/year-2017/2017-Quarter-1.csv
+python3 fix_clicks_impressions.py --path=../data/csv/year-2017/2017-Quarter-2-April.csv
+python3 fix_clicks_impressions.py --path=../data/csv/year-2017/2017-Quarter-2-May.csv
+python3 fix_clicks_impressions.py --path=../data/csv/year-2017/2017-Quarter-3.csv

@@ -1,0 +1,64 @@
+#!/usr/local/bin/zsh
+
+# Filename: scrape
+# Modified: June 9, 2019 07:01:52 PM
+# Author:   David Oniani
+# License:  GNU General Public License v3.0
+
+# Get rid of all .DS_Store files (they can halt the scraping process)
+find . -name '.DS_Store' -delete
+
+# 2015 Quarter 2
+python3 scrape.py --dir=./data/year-2015/2015-Quarter-2
+mv -f data.csv 2015-Quarter-2.csv
+mv -f 2015-Quarter-2.csv CSV/year-2015
+
+# 2015 Quarter 3
+python3 scrape.py --dir=./data/year-2015/2015-Quarter-3
+mv -f data.csv 2015-Quarter-3.csv
+mv -f 2015-Quarter-3.csv CSV/year-2015
+
+# 2015 Quarter 4
+python3 scrape.py --dir=./data/year-2015/2015-Quarter-4
+mv -f data.csv 2015-Quarter-4.csv
+mv -f 2015-Quarter-4.csv CSV/year-2015
+
+# 2016 Quarter 1
+python3 scrape.py --dir=./data/year-2016/2016-Quarter-1
+mv -f data.csv 2016-Quarter-1.csv
+mv -f 2016-Quarter-1.csv CSV/year-2016
+
+# 2016 Quarter 2
+python3 scrape.py --dir=./data/year-2016/2016-Quarter-2
+mv -f data.csv 2016-Quarter-2.csv
+mv -f 2016-Quarter-2.csv CSV/year-2016
+
+# 2016 Quarter 3
+python3 scrape.py --dir=./data/year-2016/2016-Quarter-3
+mv -f data.csv 2016-Quarter-3.csv
+mv -f 2016-Quarter-3.csv CSV/year-2016
+
+# 2016 Quarter 4
+python3 scrape.py --dir=./data/year-2016/2016-Quarter-4
+mv -f data.csv 2016-Quarter-4.csv
+mv -f 2016-Quarter-4.csv CSV/year-2016
+
+# 2017 Quarter 1
+python3 scrape.py --dir=./data/year-2017/2017-Quarter-1
+mv -f data.csv 2017-Quarter-1.csv
+mv -f 2017-Quarter-1.csv CSV/year-2017
+
+# 2017 Quarter 2 May
+python3 scrape.py --dir=./data/year-2017/2017-Quarter-2-May
+mv -f data.csv 2017-Quarter-2-May.csv
+mv -f 2017-Quarter-2-May.csv CSV/year-2017
+
+# 2017 Quarter 2 April
+python3 scrape.py --dir=./data/year-2017/2017-Quarter-2-April
+mv -f data.csv 2017-Quarter-2-April.csv
+mv -f 2017-Quarter-2-April.csv CSV/year-2017
+
+# 2017 Quarter 3
+python3 scrape.py --dir=./data/year-2017/2017-Quarter-3
+mv -f data.csv 2017-Quarter-3.csv
+mv -f 2017-Quarter-3.csv CSV/year-2017
