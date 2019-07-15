@@ -9,16 +9,16 @@
 python3 regression.py --filepath="../data/csv/by-year/year-2015.csv" \
                       --independent="Ad Impressions" \
                       --dependent="Ad Clicks" \
-                      --title="Year 2015 Ad Clicks VS Ad Impressions" \
+                      --title="Year 2015 Ad Clicks VS Ad Impressions"
 
 # Year 2016
 python3 regression.py --filepath="../data/csv/by-year/year-2016.csv" \
                       --independent="Ad Impressions" \
                       --dependent="Ad Clicks" \
-                      --title="Year 2016 Ad Clicks VS Ad Impressions" \
+                      --title="Year 2016 Ad Clicks VS Ad Impressions"
 
 # Year 2017
 python3 regression.py --filepath="../data/csv/by-year/year-2017.csv" \
                       --independent="Ad Impressions" \
                       --dependent="Ad Clicks" \
-                      --title="Year 2017 Ad Clicks VS Ad Impressions" \
+                      --title="Year 2017 Ad Clicks VS Ad Impressions"

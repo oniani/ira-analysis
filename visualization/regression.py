@@ -55,7 +55,7 @@ def plot_regression(
     sns_plot = sns.regplot(x=independent, y=dependent, data=columns)
     sns_plot.set_title(title)
     figure = sns_plot.get_figure()
-    figure_name = "-".join(list(map(lambda x: x.lower(), title.split())))
+    figure_name = "-".join(map(lambda x: x.lower(), title.split()))
     figure.savefig(figure_name)
 
 
