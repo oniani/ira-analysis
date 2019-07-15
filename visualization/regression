@@ -1,0 +1,75 @@
+#!/usr/local/bin/zsh
+
+# Filename:     regression
+# Modified:     July 14, 2019 08:58:25 PM
+# Author:       David Oniani
+# License:      GNU General Public License v3.0
+# Descriptinon: A script to bulk-plot linear regressions
+
+# Cleanup
+echo "Cleanup..."
+rm -rf regression-plots
+
+# Creating plots
+echo "Creating plots..."
+
+# Ad Clicks VS Ad Impressions
+
+# Year 2015
+python3 regression.py --filepath="../data/csv/by-year/year-2015.csv" \
+                      --independent="Ad Impressions" \
+                      --dependent="Ad Clicks" \
+                      --title="Year 2015 Ad Clicks VS Ad Impressions"
+
+# Year 2016
+python3 regression.py --filepath="../data/csv/by-year/year-2016.csv" \
+                      --independent="Ad Impressions" \
+                      --dependent="Ad Clicks" \
+                      --title="Year 2016 Ad Clicks VS Ad Impressions"
+
+# Year 2017
+python3 regression.py --filepath="../data/csv/by-year/year-2017.csv" \
+                      --independent="Ad Impressions" \
+                      --dependent="Ad Clicks" \
+                      --title="Year 2017 Ad Clicks VS Ad Impressions"
+
+# Ad Impressions VS Ad Clicks
+
+# Year 2015
+python3 regression.py --filepath="../data/csv/by-year/year-2015.csv" \
+                      --independent="Ad Clicks" \
+                      --dependent="Ad Impressions" \
+                      --title="Year 2015 Ad Impressions VS Ad Clicks"
+
+# Year 2016
+python3 regression.py --filepath="../data/csv/by-year/year-2016.csv" \
+                      --independent="Ad Clicks" \
+                      --dependent="Ad Impressions" \
+                      --title="Year 2016 Ad Impressions VS Ad Clicks"
+
+# Year 2017
+python3 regression.py --filepath="../data/csv/by-year/year-2017.csv" \
+                      --independent="Ad Clicks" \
+                      --dependent="Ad Impressions" \
+                      --title="Year 2017 Ad Impressions VS Ad Clicks"
+
+# Move to appropriate directories
+echo "Creating directories..."
+mkdir regression-plots
+cd regression-plots
+mkdir ad-clicks-vs-ad-impressions
+mkdir ad-impressions-vs-ad-clicks
+cd ..
+echo "Moving files to corresponding directories..."
+
+# Ad Clicks VS Ad Impressions
+mv year-2015-ad-clicks-vs-ad-impressions.png regression-plots/ad-clicks-vs-ad-impressions
+mv year-2016-ad-clicks-vs-ad-impressions.png regression-plots/ad-clicks-vs-ad-impressions
+mv year-2017-ad-clicks-vs-ad-impressions.png regression-plots/ad-clicks-vs-ad-impressions
+
+# Ad Impressions VS Ad Clicks
+mv year-2015-ad-impressions-vs-ad-clicks.png regression-plots/ad-impressions-vs-ad-clicks
+mv year-2016-ad-impressions-vs-ad-clicks.png regression-plots/ad-impressions-vs-ad-clicks
+mv year-2017-ad-impressions-vs-ad-clicks.png regression-plots/ad-impressions-vs-ad-clicks
+
+echo "Done!"

@@ -1,0 +1,22 @@
+#!/usr/local/bin/zsh
+
+# Filename:     barchart
+# Modified:     July 14, 2019 10:23:12 PM
+# Author:       David Oniani
+# License:      GNU General Public License v3.0
+# Descriptinon: A script to plot a barchart
+
+# Cleanup
+echo "Cleanup..."
+rm -rf barchart-plots
+
+# Creating plots
+echo "Creating plots..."
+python3 barchart.py
+
+# Move to appropriate directories
+echo "Creating directories..."
+mkdir barchart-plots
+echo "Moving files to corresponding directories..."
+mv barchart.png barchart-plots
+echo "Done!"

@@ -1,4 +1,4 @@
-# IRA Facebook Posts' Analysis
+# Textual and Statistical Analysis of IRA Facebook Posts
 
 **This repository is a workspace for developing and creating
 research tools, software, datasets, etc.**
@@ -29,7 +29,7 @@ In [1]: import pandas as pd
 
 In [2]:
 
-In [2]: data = pd.read_csv(open("./data/csv/year-2015/2015-Quarter-2.csv", "r"), thousands=",", na_filter=False)
+In [2]: data = pd.read_csv("./data/csv/year-2015/2015-Quarter-2.csv", thousands=",", na_filter=False)
 
 In [3]:
 

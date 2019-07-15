@@ -10,13 +10,14 @@ License:
     regarding the licensing of this code.
 
 Description:
-    A program to bulk-plot linear regressions.
+    A program to plot a linear regression.
 """
 
 import argparse
 
 import pandas as pd
 import seaborn as sns
+import scipy.stats as stats
 import matplotlib.pyplot as plt
 
 
@@ -35,10 +36,10 @@ def plot_regression(
         title: specifies the title of the linear regression
     """
     sns.set(
-        color_codes=True, rc={"figure.figsize": (11.7, 8.27)}, style="darkgrid"
+        color_codes=True, rc={"figure.figsize": (15.0, 9.0)}, style="darkgrid"
     )
 
-    reader = pd.read_csv(filepath)
+    reader = pd.read_csv(filepath, thousands=",", na_filter=False)
     columns = reader[[independent, dependent]]
 
     columns = [
@@ -52,14 +53,24 @@ def plot_regression(
 
     columns = columns.reset_index(drop=True)
 
+    correlation_coefficient = stats.pearsonr(
+        reader[independent], reader[dependent]
+    )[0]
+
     sns_plot = sns.regplot(x=independent, y=dependent, data=columns)
     sns_plot.set_title(title)
+    sns_plot.annotate(
+        f"r = {correlation_coefficient:.3f}",
+        xy=(10e3, 7.2 * 10e3),
+        weight="bold",
+    )
+
     figure = sns_plot.get_figure()
     figure_name = "-".join(map(lambda x: x.lower(), title.split()))
     figure.savefig(figure_name)
 
 
-def main():
+def main() -> None:
     """The main function."""
     parser = argparse.ArgumentParser(description="Process the arguments.")
 
