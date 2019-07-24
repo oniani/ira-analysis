@@ -29,7 +29,7 @@ In [1]: import pandas as pd
 
 In [2]:
 
-In [2]: data = pd.read_csv("./data/csv/year-2015/2015-Quarter-2.csv", thousands=",", na_filter=False)
+In [2]: data = pd.read_csv("./data/csv/year-2015/2015-Quarter-2.csv", na_filter=False, thousands=",")
 
 In [3]:
 
