@@ -67,6 +67,8 @@ In [5]:
 
 ### References
 
+- [Authorship attribution in the wild](https://www.researchgate.net/publication/220147732_Authorship_attribution_in_the_wild)
+- [Who Wrote the Web? Revisiting Influential Author Identification Research Applicable to Information Retrieval](https://www.researchgate.net/publication/309025021_Who_Wrote_the_Web_Revisiting_Influential_Author_Identification_Research_Applicable_to_Information_Retrieval)
 - [Authorship Attribution of Micro-Messages](https://www.aclweb.org/anthology/D13-1193)
 - [Design and Implementation of a Machine Learning-Based Authorship Identification Model](https://www.hindawi.com/journals/sp/2019/9431073/)
 - [Exposing Russia’s Effort to Sow Discord Online: The Internet Research Agency and Advertisements](https://intelligence.house.gov/social-media-content/)
