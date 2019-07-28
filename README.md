@@ -13,7 +13,7 @@ research tools, software, datasets, etc.**
 └── visualization  # Programs and scripts for statistical visualizations
 ```
 
-### Working with Data
+## Working with Data
 
 The recommended way of working with the CSV data is using the
 `pandas` library. `pandas` provides a user-friendly environment
@@ -65,7 +65,7 @@ dtype: object
 In [5]:
 ```
 
-### References
+## References
 
 - [Authorship attribution in the wild](https://www.researchgate.net/publication/220147732_Authorship_attribution_in_the_wild)
 - [Who Wrote the Web? Revisiting Influential Author Identification Research Applicable to Information Retrieval](https://www.researchgate.net/publication/309025021_Who_Wrote_the_Web_Revisiting_Influential_Author_Identification_Research_Applicable_to_Information_Retrieval)
@@ -76,3 +76,7 @@ In [5]:
 - [How Russian Trolls Used Meme Warfare to Divide America](https://www.wired.com/story/russia-ira-propaganda-senate-report/)
 - [Racist cop Facebook posts are a public safety problem | Editorial](https://www.inquirer.com/opinion/editorials/philadelphia-police-facebook-posts-plain-view-project-racist-20190605.html)
 - [Facebook Ad Library](https://www.facebook.com/ads/library)
+
+## License
+
+[GNU General Public License v3.0](LICENSE)
