@@ -300,15 +300,20 @@ def word_counter(filepath: str, word: str) -> int:
 def main() -> None:
     """The main function."""
     top_25 = most_common_words("../data/csv/all/all.csv", 25)
-    word_names = [i[1] for i in top_25]
-    word_counts = [i[0] for i in top_25]
+    word_counts = [i[1] for i in top_25]
+    word_names = [i[0] for i in top_25]
 
     sns.set(
         color_codes=True, rc={"figure.figsize": (15.0, 9.0)}, style="darkgrid"
     )
 
-    sns_plot = sns.barplot(word_names, word_counts)
+    sns_plot = sns.barplot(word_counts, word_names)
     sns_plot.set_title("Most Common Words in 2015, 2016, and 2017 Combined")
+
+    # Text on the top of each barplot
+    for index, number in enumerate(word_counts):
+        sns_plot.text(number + 10, index + 0.2, str(number))
+
     figure = sns_plot.get_figure()
     figure_name = "barchart_word_counts.png"
     figure.savefig(figure_name)

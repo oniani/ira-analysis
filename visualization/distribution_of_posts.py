@@ -49,8 +49,13 @@ def main() -> None:
 
     sns_plot = sns.barplot(lengths, labels)
     sns_plot.set_title("Distribution of Posts Over Years 2015, 2016, and 2017")
+
+    # Text on the top of each barplot
+    for index, length in enumerate(lengths):
+        sns_plot.text(length + 2, index, str(length))
+
     figure = sns_plot.get_figure()
-    figure_name = "barchart.png"
+    figure_name = "barchart_distribution_of_posts.png"
     figure.savefig(figure_name)
 
 
