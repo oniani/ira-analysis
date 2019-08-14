@@ -1,17 +1,17 @@
 #!/usr/local/bin/zsh
 
 # Filename:     regression
-# Modified:     July 14, 2019 08:58:25 PM
+# Modified:     August 13, 2019 10:53:50 PM
 # Author:       David Oniani
 # License:      GNU General Public License v3.0
 # Descriptinon: A script to bulk-plot linear regressions
 
 # Cleanup
-echo "Cleanup..."
+printf "Cleanup...\n"
 rm -rf regression-plots
 
 # Creating plots
-echo "Creating plots..."
+printf "Creating regression plots...\n"
 
 # Ad Clicks VS Ad Impressions
 
@@ -54,13 +54,13 @@ python3 regression.py --filepath="../data/csv/by-year/year-2017.csv" \
                       --title="Year 2017 Ad Impressions VS Ad Clicks"
 
 # Move to appropriate directories
-echo "Creating directories..."
+printf "Creating directories...\n"
 mkdir regression-plots
 cd regression-plots
 mkdir ad-clicks-vs-ad-impressions
 mkdir ad-impressions-vs-ad-clicks
 cd ..
-echo "Moving files to corresponding directories..."
+printf "Moving files to regression-plots directory...\n"
 
 # Ad Clicks VS Ad Impressions
 mv year-2015-ad-clicks-vs-ad-impressions.png regression-plots/ad-clicks-vs-ad-impressions
@@ -72,4 +72,4 @@ mv year-2015-ad-impressions-vs-ad-clicks.png regression-plots/ad-impressions-vs-
 mv year-2016-ad-impressions-vs-ad-clicks.png regression-plots/ad-impressions-vs-ad-clicks
 mv year-2017-ad-impressions-vs-ad-clicks.png regression-plots/ad-impressions-vs-ad-clicks
 
-echo "Done!"
+printf "Done!\n"

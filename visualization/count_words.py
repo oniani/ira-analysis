@@ -21,6 +21,8 @@ import matplotlib.pyplot as plt
 import seaborn as sns
 import pandas as pd
 
+from barchart_labeling import show_values_on_bars
+
 
 ARTICLES = ["a", "an", "the"]
 
@@ -307,13 +309,11 @@ def main() -> None:
         color_codes=True, rc={"figure.figsize": (15.0, 9.0)}, style="darkgrid"
     )
 
+    # Plot and save the barchart
+    _, _ = plt.subplots(1, 1)
     sns_plot = sns.barplot(word_counts, word_names)
     sns_plot.set_title("Most Common Words in 2015, 2016, and 2017 Combined")
-
-    # Text on the top of each barplot
-    for index, number in enumerate(word_counts):
-        sns_plot.text(number + 10, index + 0.2, str(number))
-
+    show_values_on_bars(sns_plot, space=max(word_counts) * 0.5 / 100)
     figure = sns_plot.get_figure()
     figure_name = "barchart_word_counts.png"
     figure.savefig(figure_name)

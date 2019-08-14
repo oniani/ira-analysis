@@ -1,22 +1,25 @@
 #!/usr/local/bin/zsh
 
 # Filename:     barchart
-# Modified:     July 14, 2019 10:23:12 PM
+# Modified:     August 13, 2019 10:49:52 PM
 # Author:       David Oniani
 # License:      GNU General Public License v3.0
 # Descriptinon: A script to plot a barchart
 
 # Cleanup
-echo "Cleanup..."
-rm -rf barchart-plots
+printf "Cleanup...\n"
+rm -fr __pycache__
+rm -fr barchart-plots
 
 # Creating plots
-echo "Creating plots..."
-python3 barchart.py
+printf "Creating barchart plots...\n"
+python3 age_targeted.py
+python3 count_words.py
+python3 distribution_of_posts.py
 
 # Move to appropriate directories
-echo "Creating directories..."
+printf "Creating directories...\n"
 mkdir barchart-plots
-echo "Moving files to corresponding directories..."
-mv barchart.png barchart-plots
-echo "Done!"
+printf "Moving files to barchart-plots directory...\n"
+mv *.png barchart-plots
+printf "Done!\n"

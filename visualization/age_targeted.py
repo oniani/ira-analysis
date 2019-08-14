@@ -19,6 +19,8 @@ import matplotlib.pyplot as plt
 import pandas as pd
 import seaborn as sns
 
+from barchart_labeling import show_values_on_bars
+
 
 def main() -> None:
     """The main function."""
@@ -103,13 +105,10 @@ def main() -> None:
     numbers = [y for _, y in results]
 
     # Plot and save the barchart
+    _, _ = plt.subplots(1, 1)
     sns_plot = sns.barplot(numbers, labels)
     sns_plot.set_title("TOP 10 Targeted Audience Ages")
-
-    # Text on the top of each barplot
-    for index, number in enumerate(numbers):
-        sns_plot.text(number + 10, index, str(number))
-
+    show_values_on_bars(sns_plot, space=max(numbers) * 0.5 / 100)
     figure = sns_plot.get_figure()
     figure_name = "barchart_targeted_age.png"
     figure.savefig(figure_name)

@@ -61,7 +61,8 @@ def plot_regression(
     sns_plot.set_title(title)
     sns_plot.annotate(
         f"r = {correlation_coefficient:.3f}",
-        xy=(10e3, 7.2 * 10e3),
+        xy=(min(reader[independent]), max(reader[dependent])),
+        fontsize=16,
         weight="bold",
     )
 

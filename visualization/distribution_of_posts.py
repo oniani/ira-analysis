@@ -17,6 +17,8 @@ import pandas as pd
 import seaborn as sns
 import matplotlib.pyplot as plt
 
+from barchart_labeling import show_values_on_bars
+
 
 def main() -> None:
     """The main function."""
@@ -47,13 +49,11 @@ def main() -> None:
         lengths.append(len(data))
         labels.append(" ".join(filename.split("/")[-1][:-4].split("-")))
 
+    # Plot and save the barchart
+    _, _ = plt.subplots(1, 1)
     sns_plot = sns.barplot(lengths, labels)
     sns_plot.set_title("Distribution of Posts Over Years 2015, 2016, and 2017")
-
-    # Text on the top of each barplot
-    for index, length in enumerate(lengths):
-        sns_plot.text(length + 2, index, str(length))
-
+    show_values_on_bars(sns_plot, space=max(lengths) * 0.5 / 100)
     figure = sns_plot.get_figure()
     figure_name = "barchart_distribution_of_posts.png"
     figure.savefig(figure_name)
