@@ -1,0 +1,18 @@
+#!/usr/local/bin/zsh
+
+# Filename:     wordcloud
+# Modified:     August 14, 2019 07:11:25 PM
+# Author:       David Oniani
+# License:      GNU General Public License v3.0
+# Descriptinon: A script to generate a wordcloud
+
+# Cleanup
+printf "Cleanup...\n"
+rm -fr __pycache__
+rm -f wordcloud.png
+rm -f top25.txt
+printf "Writing to a file...\n"
+python3 write_counts.py
+printf "Generating wordclours...\n"
+python3 ./wordcloud_generator.py
+printf "Done!\n"
