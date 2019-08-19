@@ -1,0 +1,38 @@
+#!/usr/local/bin/zsh
+
+# Filename:     ad_spend
+# Modified:     August 13, 2019 05:26:20 PM
+# Author:       David Oniani
+# License:      GNU General Public License v3.0
+# Descriptinon: A script to print out the statistics for ad spendings
+
+printf "By year...\n"
+printf "Year 2015: "
+python3 ad_spend.py --filename=../data/csv/by-year/year-2015.csv
+printf "Year 2016: "
+python3 ad_spend.py --filename=../data/csv/by-year/year-2016.csv
+printf "Year 2017: "
+python3 ad_spend.py --filename=../data/csv/by-year/year-2017.csv
+printf "\nBy year (quarters)...\n"
+printf "Year 2015 (Quarter 1): "
+python3 ad_spend.py --filename=../data/csv/year-2015/2015-Quarter-2.csv
+printf "Year 2015 (Quarter 2): "
+python3 ad_spend.py --filename=../data/csv/year-2015/2015-Quarter-3.csv
+printf "Year 2015 (Quarter 3): "
+python3 ad_spend.py --filename=../data/csv/year-2015/2015-Quarter-4.csv
+printf "\nYear 2016 (Quarter 1): "
+python3 ad_spend.py --filename=../data/csv/year-2016/2016-Quarter-1.csv
+printf "Year 2016 (Quarter 2): "
+python3 ad_spend.py --filename=../data/csv/year-2016/2016-Quarter-2.csv
+printf "Year 2016 (Quarter 3): "
+python3 ad_spend.py --filename=../data/csv/year-2016/2016-Quarter-3.csv
+printf "Year 2016 (Quarter 4): "
+python3 ad_spend.py --filename=../data/csv/year-2016/2016-Quarter-4.csv
+printf "\nYear 2017 (Quarter 1): "
+python3 ad_spend.py --filename=../data/csv/year-2017/2017-Quarter-1.csv
+printf "Year 2017 (Quarter 2 April): "
+python3 ad_spend.py --filename=../data/csv/year-2017/2017-Quarter-2-April.csv
+printf "Year 2016 (Quarter 2 May): "
+python3 ad_spend.py --filename=../data/csv/year-2017/2017-Quarter-2-May.csv
+printf "Year 2016 (Quarter 3): "
+python3 ad_spend.py --filename=../data/csv/year-2017/2017-Quarter-3.csv
