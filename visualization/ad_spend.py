@@ -64,7 +64,7 @@ def main() -> None:
         ]
     )
 
-    print(f"{ad_spend_RU:.3f}, ${ad_spend_USD:.3f}")
+    print(f"RUB {ad_spend_RU:.3f}, ${ad_spend_USD:.3f}")
 
 
 if __name__ == "__main__":
