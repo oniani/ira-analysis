@@ -161,9 +161,8 @@
 
 % Title
 \title{\textbf{Textual and Statistical Analysis of Russian IRA Facebook Posts}\\
-      {\small \textsuperscript{*}The paper is written in the scope of a
-                                 collaborative summer research on visual
-                                 persuasion with Richard K. Merritt.}}
+      \small \textsuperscript{*}The paper is written in the scope of a student-faculty collaborative\\
+                                summer research with professor Richard K. Merritt.}
 
 % Date
 \date{Month Day, Year}
@@ -182,42 +181,21 @@
 \begin{abstract}
 \addcontentsline{toc}{section}{Abstract}
 
-\noindent The 2016 Presidential Election was targeted by an unprecedented
-intelligence and influence campaign, arising out of Russia, it sought to
-undermine the election, sow discord, attack the fissures of the United States
-and sway the Election in Donald Trump’s favor. The entirety of the United
-States Intelligence infrastructure acknowledge that Russians attempted to sway
-the votes of millions of people. Central to this foreign infiltration into the
-electorate is the merging machine learning, the principles of misdirection,
-online entities deployed for the purposes of deception, and contemporary
-research on persuasion, psychology and manipulation. This project not only
-seeks to define the underlying dynamic design structures of this influential
-campaign, but also to specifically examine how strategic design and targeted
-graphic design were generated. From the contemporary political campaign to
-advertisement, human actions as sociopolitical agents and consumers can be
-intermediated by a contemporary influence practice. It is the contention of
-this project that language and image can effectively be interengineered to
-produce desired outcomes in audiences through the integrated use of specific
-psychological, mnemonic and aesthetic strategies. Historically, these
-strategies often use the tools of fear, racism, sexism, othering, white
-supremacy and a narrowly focused patriotism. Artificial Intelligence, Content
-Analysis and Machine Learning at the End of Democracy, will spend 8 weeks of
-this summer using machine learning, to analyze the 3500 Russian Facebook Ad
-dataset released by U.S. House of Representa- tives Permanent Select Committee
-on Intelligence. We will additionally be examining the 10 million tweets and
-2 million image Russian Twitter dataset. These datasets will be used as
-“training data” (training data refers to refers to that portion of data used
-to fit a model. Unsupervised learning refers to analysis in which one attempts
-to learn something about the data. other than predicting an output value of
-interest [whether it falls into clusters, for example])*. We will develop our
-machine learning software in the Python computer language. We will additionally
-be developing software using Google Vision artificial intelligence application
-programming interface(set of tools and resources that allows software
-developers to create applications) Using machine learning will allow us to
-discern patterns in a very large image and text datasets. Specifically an
-archive of images that were designed to manipulate the last U.S. Presidential
-election. Once we discern patterns our next step is to identify images designed
-to foster racism, division and the spread of intolerance.
+\noindent The 2016 United States Presidential Election was targeted by an
+unprecedented intelligence and influence campaign. Arising out of Russian
+so-called Internet Research Agency (IRA), it sought to sow discord and attack
+the fissures of the United States with the ultimate goal of swaying the
+election results.~\cite{ira2016}~\cite{ira2016data} Recently, some of the
+Facebook advertisements, which were published and promulgated by IRA, were
+released by The United States House Permanent Select Committee on Intelligence.
+All of the advertisements are in the PDF format. We have scraped the PDF files
+and present the results obtained by textual and statistical analysis of the
+above-mentioned data. Authorship attribution tests were also performed.
+~\footnote{Please note that this paper does not discuss neither social, nor
+political implications of these events, but rather explores the methods of
+persuasion that were employed in this influence campaign.}~\cite{ira2016csvdata}
+We have also made the data publicly available for other researchers and/or
+interested people in a much nicer and easier-to-manipulate CSV format.
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -229,34 +207,77 @@ to foster racism, division and the spread of intolerance.
 \newpage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% The rest of the stuff...
+% Data and Preparation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{\centering Example Section}
-\addcontentsline{toc}{section}{Example Section}
+\section*{\centering Data and Preparation}
+\addcontentsline{toc}{section}{Data and Preparation}
 
-Proin~\cite{munkres2000} posuere suscipit ante, vitae eleifend nulla
-rhoncus in. Etiam vitae tellus vel augue porta consectetur in et risus.
-Nunc placerat in massa vel ultricies. In pharetra id odio vitae porttitor.
-Donec blandit tincidunt nunc, vitae dignissim massa semper in. Nulla facilisis
-imperdiet nisi dignissim suscipit. Proin auctor turpis vitae magna elementum,
-vitae imperdiet nunc blandit.
+The data was harvested from~\cite{ira2016data} more than 3500 Russian IRA
+Facebook posts made publicly available in the PDF format by the House
+Intelligence Committee. We used the free and open-source Python library
+~\cite{pdftotext} \texttt{pdftotext} to scraped the data. Many CSV files were
+formatted in a way that it was hard to scraped the data correctly. Because of
+this, we have reviewed and reviewed most of the CSV files for validity.
+~\cite{ira2016csvdata} All the CSV files have been made publicly available.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% General Statistics
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{\centering General Statistics}
+\addcontentsline{toc}{section}{General Statistics}
+The distribution of posts over all three years shows us a bimodal distribution
+with two peaks in 2016 Quarter 2 and 2016 Quarter 4. Given the fact that the US
+Presidential Elections were held in 2016 Quarter 4, it is surprising that the
+second quarter had the most of the Facebook ads in it.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=4cm, height=4cm]{image/two-rod-system}
-\caption*{A two-rod system ($2R$ robot).}
+\includegraphics[width=\textwidth]{../visualization/barchart-plots/barchart_distribution_of_posts.png}
+\caption*{Distribution of Posts Over Years 2015, 2016, and 2017.}
 \end{figure}
 
-Etiam arcu dui, volutpat accumsan tempor vel, blandit a quam. Sed non tortor
-maximus, ullamcorper purus id, fringilla nibh. Phasellus fringilla ac massa
-vel congue. Ut fringilla id quam quis condimentum. Nulla a rhoncus risus.
-Morbi ut semper diam, faucibus mattis risus. Donec efficitur congue risus,
-vitae varius sapien hendrerit sit amet. Duis fringilla, enim sed aliquet
-gravida, dolor arcu posuere lacus, vel lacinia neque velit non sapien.
+When it comes the money spent on ads, however, the fourth quarter of 2016 is,
+by far, the one on which IRA spent the most money on. It is also interesting
+that most of of the money was payed in Russian Rubles with two exceptions in
+2016 quarter 3 and 2017 quarter 1 where they have spent \$74.000 and \$35.330
+respectively.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{../visualization/barchart-plots/barchart_ad_spend_RU_distribution.png}
+\caption*{Distribution of Ad Spendings Over Years 2015, 2016, and 2017 (in Rubles).}
+\end{figure}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Bibliography and references
+% Textual Analysis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{\centering Textual Analysis}
+\addcontentsline{toc}{section}{General Statistics}
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Aenean porta purus et sem gravida rutrum.
+Maecenas blandit nulla ac luctus tempus.
+Nam finibus posuere ante, et lacinia massa vestibulum sit amet.
+Nulla velit arcu, efficitur quis turpis nec, sollicitudin lobortis nisi.
+Vivamus ut diam ut eros faucibus fringilla.
+Suspendisse pellentesque magna nec velit tristique sollicitudin.
+Morbi ultrices nec augue et molestie.
+Nam sapien ante, ullamcorper elementum convallis id, faucibus in lectus.
+Fusce pellentesque mollis velit efficitur porta.
+Sed finibus ligula quam, et lacinia velit posuere auctor.
+Donec ligula lorem, dictum nec lectus in, vehicula tincidunt massa.
+In hac habitasse platea dictumst.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\textwidth]{../visualization/barchart-plots/barchart_word_counts.png}
+\caption*{Figure.}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Bibliography and References
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newpage
