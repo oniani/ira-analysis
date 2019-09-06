@@ -1,0 +1,184 @@
+Sentiment Analysis
+==================
+
+All Years
+Positive: 1643
+Negative: 900
+Neutral:  933
+
+==================
+
+Year 2015
+Positive: 319
+Negative: 154
+Neutral:  140
+
+Year 2016
+Positive: 826
+Negative: 568
+Neutral:  443
+
+Year 2017
+Positive: 498
+Negative: 178
+Neutral:  350
+
+==================
+
+Year 2015 Quarter 2
+Positive: 56
+Negative: 40
+Neutral:  18
+
+Year 2015 Quarter 3
+Positive: 161
+Negative: 83
+Neutral:  48
+
+Year 2015 Quarter 4
+Positive: 102
+Negative: 31
+Neutral:  74
+
+==================
+
+Year 2016 Quarter 1
+Positive: 100
+Negative: 98
+Neutral:  46
+
+Year 2016 Quarter 2
+Positive: 309
+Negative: 204
+Neutral:  180
+
+Year 2016 Quarter 3
+Positive: 118
+Negative: 99
+Neutral:  59
+
+Year 2016 Quarter 4
+Positive: 299
+Negative: 167
+Neutral:  158
+
+==================
+
+Year 2017 Quarter 1
+Positive: 219
+Negative: 62
+Neutral:  132
+
+Year 2017 Quarter 2 April
+Positive: 171
+Negative: 43
+Neutral:  154
+
+Year 2017 Quarter 2 May
+Positive: 102
+Negative: 73
+Neutral:  62
+
+Year 2017 Quarter 3
+Positive: 6
+Negative: 0
+Neutral:  2
+
+Analyzing Negativity
+==================
+
+Minimum Level of Subjectivity is 1.0
+
+Year 2016
+Negative: 154
+
+Year 2016
+Negative: 562
+
+Year 2017
+Negative: 176
+
+Minimum Level of Subjectivity is 0.75
+
+Year 2016
+Negative: 150
+
+Year 2016
+Negative: 547
+
+Year 2017
+Negative: 169
+
+Minimum Level of Subjectivity is 0.5
+
+Year 2016
+Negative: 123
+
+Year 2016
+Negative: 405
+
+Year 2017
+Negative: 120
+
+Minimum Level of Subjectivity is 0.25
+
+Year 2016
+Negative: 15
+
+Year 2016
+Negative: 81
+
+Year 2017
+Negative: 22
+
+Minimum Level of Subjectivity is 0.15
+
+Year 2016
+Negative: 5
+
+Year 2016
+Negative: 33
+
+Year 2017
+Negative: 10
+
+Minimum Level of Subjectivity is 0.1
+
+Year 2016
+Negative: 2
+
+Year 2016
+Negative: 11
+
+Year 2017
+Negative: 6
+
+Minimum Level of Subjectivity is 0.05
+
+Year 2016
+Negative: 1
+
+Year 2016
+Negative: 5
+
+Year 2017
+Negative: 2
+
+Calculating Sentiment Values and Subjectivities
+===============================================
+
+Treating everything as a single text (Years 2015, 2016, 2017)
+Polarity:     0.07997512410311418
+Subjectivity: 0.46036865663825033
+
+Treating everything as a single text (Year 2015)
+Polarity:     0.08534491250593429
+Subjectivity: 0.4461842460275844
+
+Treating everything as a single text (Year 2016)
+Polarity:     0.04889393924879191
+Subjectivity: 0.4615361063640712
+
+Treating everything as a single text (Year 2017)
+Polarity:     0.13969072492343612
+Subjectivity: 0.4731374254299079
