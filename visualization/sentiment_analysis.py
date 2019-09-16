@@ -224,7 +224,7 @@ def main() -> None:
     subjectivity = 1.0
     print(f"Minimum Level of Subjectivity is {subjectivity}\n")
 
-    print("Year 2016")
+    print("Year 2015")
     analyze_negativity(data_2015, subjectivity)
 
     print("\nYear 2016")
@@ -238,7 +238,7 @@ def main() -> None:
     subjectivity = 0.75
     print(f"\nMinimum Level of Subjectivity is {subjectivity}\n")
 
-    print("Year 2016")
+    print("Year 2015")
     analyze_negativity(data_2015, subjectivity)
 
     print("\nYear 2016")
@@ -252,7 +252,7 @@ def main() -> None:
     subjectivity = 0.5
     print(f"\nMinimum Level of Subjectivity is {subjectivity}\n")
 
-    print("Year 2016")
+    print("Year 2015")
     analyze_negativity(data_2015, subjectivity)
 
     print("\nYear 2016")
@@ -266,7 +266,7 @@ def main() -> None:
     subjectivity = 0.25
     print(f"\nMinimum Level of Subjectivity is {subjectivity}\n")
 
-    print("Year 2016")
+    print("Year 2015")
     analyze_negativity(data_2015, subjectivity)
 
     print("\nYear 2016")
@@ -280,7 +280,7 @@ def main() -> None:
     subjectivity = 0.15
     print(f"\nMinimum Level of Subjectivity is {subjectivity}\n")
 
-    print("Year 2016")
+    print("Year 2015")
     analyze_negativity(data_2015, subjectivity)
 
     print("\nYear 2016")
@@ -294,7 +294,7 @@ def main() -> None:
     subjectivity = 0.10
     print(f"\nMinimum Level of Subjectivity is {subjectivity}\n")
 
-    print("Year 2016")
+    print("Year 2015")
     analyze_negativity(data_2015, subjectivity)
 
     print("\nYear 2016")
@@ -308,7 +308,7 @@ def main() -> None:
     subjectivity = 0.05
     print(f"\nMinimum Level of Subjectivity is {subjectivity}\n")
 
-    print("Year 2016")
+    print("Year 2015")
     analyze_negativity(data_2015, subjectivity)
 
     print("\nYear 2016")

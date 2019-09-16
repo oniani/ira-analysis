@@ -2,7 +2,7 @@
 %
 % Filename: ira-analysis.tex
 % Author:   David Oniani
-% Modified: August 30, 2019
+% Modified: September 15, 2019
 %  _         _____   __  __
 % | |    __ |_   _|__\ \/ /
 % | |   / _` || |/ _ \\  /
@@ -15,7 +15,7 @@
 % Document definition
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[12pt]{article}
+\documentclass[11pt]{article}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Packages and related settings
@@ -186,16 +186,16 @@ unprecedented intelligence and influence campaign. Arising out of Russian
 so-called Internet Research Agency (IRA), it sought to sow discord and attack
 the fissures of the United States with the ultimate goal of swaying the
 election results.~\cite{ira2016}~\cite{ira2016data} Recently, some of the
-Facebook advertisements, which were published and promulgated by IRA, were
-released by The United States House Permanent Select Committee on Intelligence.
-All of the advertisements are in the PDF format. We have scraped the PDF files
-and present the results obtained by textual and statistical analysis of the
-above-mentioned data. Authorship attribution tests were also performed.
-~\footnote{Please note that this paper does not discuss neither social, nor
-political implications of these events, but rather explores the methods of
-persuasion that were employed in this influence campaign.}~\cite{ira2016csvdata}
-We have also made the data publicly available for other researchers and/or
-interested people in a much nicer and easier-to-manipulate CSV format.
+IRA-backed Facebook advertisements were released by The United States House
+Permanent Select Committee on Intelligence.  All of the advertisements are in
+the PDF format. We have scraped the PDF files and present the results obtained
+by textual and statistical analysis of the above-mentioned data. Authorship
+attribution and sentiment analysis tests were also performed.~\footnote{Please
+note that this paper does not discuss neither social, nor political implications
+of these events, but attempts to explore the methods of persuasion that were
+employed in this influence campaign.}~\cite{ira2016csvdata} We have also made
+the data publicly available for other researchers and/or interested people in
+a much nicer and easier-to-manipulate CSV format.
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -210,15 +210,16 @@ interested people in a much nicer and easier-to-manipulate CSV format.
 % Data and Preparation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{\centering Data and Preparation}
-\addcontentsline{toc}{section}{Data and Preparation}
+\section*{\centering Data Preparation}
+\addcontentsline{toc}{section}{Data Preparation}
 
 The data was harvested from~\cite{ira2016data} more than 3500 Russian IRA
 Facebook posts made publicly available in the PDF format by the House
 Intelligence Committee. We used the free and open-source Python library
-~\cite{pdftotext} \texttt{pdftotext} to scraped the data. Many CSV files were
-formatted in a way that it was hard to scraped the data correctly. Because of
-this, we have reviewed and reviewed most of the CSV files for validity.
+~\cite{pdftotext} \texttt{pdftotext} to scrape the data. Many CSV files were
+formatted in a way that it was hard for \texttt{pdftotext} to scrape it
+correctly. Because of this, we have manually reviewed most of the CSV files
+for validity.
 ~\cite{ira2016csvdata} All the CSV files have been made publicly available.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -255,7 +256,7 @@ respectively.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{\centering Textual Analysis}
-\addcontentsline{toc}{section}{General Statistics}
+\addcontentsline{toc}{section}{Textual Analysis}
 Lorem ipsum dolor sit amet, consectetur adipiscing elit.
 Aenean porta purus et sem gravida rutrum.
 Maecenas blandit nulla ac luctus tempus.
@@ -275,6 +276,35 @@ In hac habitasse platea dictumst.
 \includegraphics[width=\textwidth]{../visualization/barchart-plots/barchart_word_counts.png}
 \caption*{Figure.}
 \end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Sentiment Analysis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{\centering Sentiment Analysis}
+\addcontentsline{toc}{section}{Sentiment Analysis}
+For the sentiment analysis purposes, we used \texttt{python}'s \texttt{TextBlob}
+library. Suprisingly, out of all Facebook posts with \texttt{Ad Text}, 1643 were
+positive, 900 negative, and 933 neutral leaving the overall tone of the posts
+positive.
+
+\begin{center}
+\begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}|  }
+ \hline
+ \multicolumn{4}{|c|}{Analyzing Negativity} \\
+ \hline
+ Subjectivity Level & Year 2015 & Year 2016 & Year 2017\\
+ \hline
+ 1.0  & 154 & 562 & 176\\
+ 0.75 & 150 & 547 & 169\\
+ 0.5  & 123 & 405 & 120\\
+ 0.25 & 15  & 81  & 22 \\
+ 0.15 & 5   & 33  & 10 \\
+ 0.1  & 2   & 11  & 6  \\
+ 0.05 & 1   & 5   & 2  \\
+ \hline
+\end{tabular}
+\end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography and References

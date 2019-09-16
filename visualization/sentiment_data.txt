@@ -89,7 +89,7 @@ Analyzing Negativity
 
 Minimum Level of Subjectivity is 1.0
 
-Year 2016
+Year 2015
 Negative: 154
 
 Year 2016
@@ -100,7 +100,7 @@ Negative: 176
 
 Minimum Level of Subjectivity is 0.75
 
-Year 2016
+Year 2015
 Negative: 150
 
 Year 2016
@@ -111,7 +111,7 @@ Negative: 169
 
 Minimum Level of Subjectivity is 0.5
 
-Year 2016
+Year 2015
 Negative: 123
 
 Year 2016
@@ -122,7 +122,7 @@ Negative: 120
 
 Minimum Level of Subjectivity is 0.25
 
-Year 2016
+Year 2015
 Negative: 15
 
 Year 2016
@@ -133,7 +133,7 @@ Negative: 22
 
 Minimum Level of Subjectivity is 0.15
 
-Year 2016
+Year 2015
 Negative: 5
 
 Year 2016
@@ -144,7 +144,7 @@ Negative: 10
 
 Minimum Level of Subjectivity is 0.1
 
-Year 2016
+Year 2015
 Negative: 2
 
 Year 2016
@@ -155,7 +155,7 @@ Negative: 6
 
 Minimum Level of Subjectivity is 0.05
 
-Year 2016
+Year 2015
 Negative: 1
 
 Year 2016
