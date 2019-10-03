@@ -2,7 +2,7 @@
 %
 % Filename: ira-analysis.tex
 % Author:   David Oniani
-% Modified: October 01, 2019
+% Modified: October 02, 2019
 %  _         _____   __  __
 % | |    __ |_   _|__\ \/ /
 % | |   / _` || |/ _ \\  /
@@ -15,7 +15,7 @@
 % Document definition
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[11pt]{article}
+\documentclass[12pt]{article}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Packages and related settings
@@ -210,17 +210,19 @@ a much nicer and easier-to-manipulate CSV format.
 % Data and Preparation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{\centering Data Preparation}
-\addcontentsline{toc}{section}{Data Preparation}
+\section*{\centering Data and Preparation}
+\addcontentsline{toc}{section}{Data and Preparation}
 
-The data was scraped from~\cite{ira2016data} more than 3500 Russian IRA
+The dataset was scraped from~\cite{ira2016data} more than 3500 Russian IRA
 Facebook posts made publicly available in the PDF format by the House
 Intelligence Committee. We used the free and open-source Python library
 ~\cite{pdftotext} \texttt{pdftotext} to scrape the data. Many CSV files were
-formatted in a way that it was hard for \texttt{pdftotext} to scrape it
-correctly. Because of this, we have manually reviewed most of the CSV files
-for validity.~\cite{ira2016csvdata} All the CSV files have been made publicly
-available.
+formatted in a way that it was virtually impossible for \texttt{pdftotext} to
+scrape it correctly. Because of this, we have manually reviewed most of the
+CSV files for validity.~\cite{ira2016csvdata} All the CSV files have been made
+publicly available. It is important to note that the dataset is just a sample
+of a bigger dataset, and albeit less likely, might not be a good representatation
+for the overall campaign.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % General Statistics
@@ -228,44 +230,55 @@ available.
 
 \section*{\centering General Statistics}
 \addcontentsline{toc}{section}{General Statistics}
-The distribution of posts over all three years shows us a bimodal distribution
-with two peaks in 2016 Quarter 2 and 2016 Quarter 4. Given the fact that the US
-Presidential Election was held in 2016 Quarter 4, it is surprising that the
-second quarter had the most of the Facebook ads in it.
+The distribution of posts over all three years shows a bimodal distribution
+with two peaks in quarters 2 and 4 of year 2016. Given the fact that the US
+Presidential Election was held in the fourth quarter of 2016, it is surprising
+that the number of posts in the second quarter exceeded that of the fourth
+quarter.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{../visualization/barchart-plots/barchart_distribution_of_posts.png}
+\includegraphics[width=0.75\columnwidth]{./image/barchart-plots/barchart_distribution_of_posts.png}
 \caption*{Distribution of Posts Over Years 2015, 2016, and 2017.}
 \end{figure}
 
-When it comes the money spent on ads, however, the fourth quarter of 2016 is,
-by far, the one on which IRA spent the most money on. It is also interesting
-that most of of the money was payed in Russian Rubles with two exceptions in
-2016 quarter 3 and 2017 quarter 1 where they have spent \$74.000 and \$35.330
-respectively. Interestingly, 99.8\% of all paid ads across all years were paid
-in Rubles. Below is the chart showing the percentages.
+As for ad spendings, the fourth quarter of 2016 exceeds that of any quarter,
+with second quarter coming next. Interestingly, most of ads were paid in the
+Russian currency (ruble) with two exceptions in 2016 quarter 3 and 2017 quarter
+1 when IRA spent \$74.000 and \$35.330 respectively.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\columnwidth]{./image/barchart-plots/barchart_ad_spend_RU_distribution.png}
+\caption*{Distribution of Ad Spendings Over Years 2015, 2016, and 2017 (in rubles).}
+\end{figure}
+
+Furthermore, 99.8\% of all paid ads across all years were paid in rubles.
+Below is the chart showing the number of posts based on a currency.
+
+\bigskip
 
 \begin{center}
-\begin{tabular}{ |p{3cm}|p{3cm}|  }
+\begin{tabular}{|p{3cm}|p{3cm}|}
  \hline
- \multicolumn{2}{|c|}{Analyzing Negativity} \\
- \hline
- Currency & Total of All Years\\
+ Currency & \text{Total (All Years)}\\
  \hline
  RUB  & 2549\\
+ \hline
  USD  & 5\\
+ \hline
  None & 787\\
+ \hline
  0    & 176\\
  \hline
 \end{tabular}
 \end{center}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=\textwidth]{../visualization/barchart-plots/barchart_ad_spend_RU_distribution.png}
-\caption*{Distribution of Ad Spendings Over Years 2015, 2016, and 2017 (in Rubles).}
-\end{figure}
+\bigskip
+
+The Russian ruble is used in Russia, Belarus, and two regions of Georgia, which
+are considered by Russia as partially recognised states of Abkhazia and South
+Ossetia.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Textual Analysis
@@ -290,7 +303,7 @@ eliminating linking verbs, prepositions, pronouns, and some other
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=\textwidth]{../visualization/barchart-plots/barchart_word_counts.png}
+\includegraphics[width=\columnwidth]{./image/barchart-plots/barchart_word_counts.png}
 \caption*{Figure.}
 \end{figure}
 
@@ -298,31 +311,52 @@ eliminating linking verbs, prepositions, pronouns, and some other
 % Sentiment Analysis
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection*{\centering Common Words}
+\subsubsection*{\centering Sentiment Analysis}
 \addcontentsline{toc}{subsection}{Sentiment Analysis}
 For the sentiment analysis purposes, we used \texttt{python}'s \texttt{TextBlob}
 library. Suprisingly, out of all Facebook posts with \texttt{Ad Text}, 1643 were
 positive, 900 negative, and 933 neutral leaving the overall tone of the posts
-positive.
+positive. Yet, the statistical significance of this claim is rather questionable
+as the polarity levels were always near zero. Such low polarity level, however,
+demonstrates a highly intelligent design of posts maximizing efficiency of
+persuading targeted audience.
+
+\bigskip
+
+As the \texttt{Ad Text}s did not give us any strong proofs, we looked at the
+negativity levels across all three years and found a consistent trend.
+
+\bigskip
 
 \begin{center}
-\begin{tabular}{ |p{3cm}|p{3cm}|p{3cm}|p{3cm}|  }
+\begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
  \hline
- \multicolumn{4}{|c|}{Analyzing Negativity} \\
+ \multicolumn{5}{|c|}{Analyzing Negativity}\\
  \hline
- Subjectivity Level & Year 2015 & Year 2016 & Year 2017\\
+ Subjectivity & Year 2015 & Year 2016 & Year 2017 & 2016 (\%)\\
  \hline
- 1.0  & 154 & 562 & 176\\
- 0.75 & 150 & 547 & 169\\
- 0.5  & 123 & 405 & 120\\
- 0.25 & 15  & 81  & 22 \\
- 0.15 & 5   & 33  & 10 \\
- 0.1  & 2   & 11  & 6  \\
- 0.05 & 1   & 5   & 2  \\
+ 1.0  & 154 & 562 & 176 & 63.004\\
+ \hline
+ 0.75 & 150 & 547 & 169 & 63.164\\
+ \hline
+ 0.5  & 123 & 405 & 120 & 62.500\\
+ \hline
+ 0.25 & 15  & 81  & 22  & 68.644\\
+ \hline
+ 0.15 & 5   & 33  & 10  & 68.750\\
+ \hline
+ 0.1  & 2   & 11  & 6   & 57.895\\
+ \hline
+ 0.05 & 1   & 5   & 2   & 62.500\\
  \hline
 \end{tabular}
 \end{center}
 
+\bigskip
+
+Notice that at any subjectivity level, year 2016 is consistently comprising
+around 60\% of all posts. The year of the Presidentianl Election was rather
+rather negative.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Authorship Attribution
