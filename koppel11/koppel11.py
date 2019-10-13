@@ -1,3 +1,6 @@
+#!/usr/bin/env python3
+# encoding: UTF-8
+
 """
 Filename: koppel11.py
 Original Authors: Jakob Koehler and Tolga Buz
@@ -16,7 +19,7 @@ Description:
     "Authorship attribution in the wild" by Moshe Koppel,
     Jonathan Schler, and Shlomo Argamon.
 
-    For more information, see the paper: https://bit.ly/2K22ACM
+    For more information, see the paper: ./paper.pdf
 """
 
 import math
@@ -28,7 +31,7 @@ import jsonhandler
 # length of feature list
 FEATURE_LENGTH = 20000
 
-# Minimum size of doc (increases precision, decreases recall if many small docs)
+# Min size of doc (increases precision, decreases recall if many small docs)
 MINLEN = 0
 
 # Less than 500 words in the training data is not attributed

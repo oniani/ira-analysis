@@ -1,0 +1,259 @@
+{
+  "answers": [
+    {
+      "unknown_text": "2017-unknown0.txt",
+      "author": "candidate2016",
+      "score": 0.6
+    },
+    {
+      "unknown_text": "2017-unknown1.txt",
+      "author": "candidate2016",
+      "score": 0.6
+    },
+    {
+      "unknown_text": "2017-unknown2.txt",
+      "author": "candidate2016",
+      "score": 0.63
+    },
+    {
+      "unknown_text": "2017-unknown3.txt",
+      "author": "candidate2016",
+      "score": 0.61
+    },
+    {
+      "unknown_text": "2017-unknown4.txt",
+      "author": "candidate2016",
+      "score": 0.53
+    },
+    {
+      "unknown_text": "2017-unknown5.txt",
+      "author": "candidate2016",
+      "score": 0.56
+    },
+    {
+      "unknown_text": "2017-unknown6.txt",
+      "author": "candidate2016",
+      "score": 0.54
+    },
+    {
+      "unknown_text": "2017-unknown7.txt",
+      "author": "candidate2016",
+      "score": 0.79
+    },
+    {
+      "unknown_text": "2017-unknown8.txt",
+      "author": "candidate2016",
+      "score": 0.86
+    },
+    {
+      "unknown_text": "2017-unknown9.txt",
+      "author": "candidate2016",
+      "score": 0.57
+    },
+    {
+      "unknown_text": "2017-unknown10.txt",
+      "author": "candidate2016",
+      "score": 0.7
+    },
+    {
+      "unknown_text": "2017-unknown11.txt",
+      "author": "candidate2016",
+      "score": 0.76
+    },
+    {
+      "unknown_text": "2017-unknown12.txt",
+      "author": "candidate2016",
+      "score": 0.54
+    },
+    {
+      "unknown_text": "2017-unknown13.txt",
+      "author": "candidate2016",
+      "score": 0.68
+    },
+    {
+      "unknown_text": "2017-unknown14.txt",
+      "author": "candidate2016",
+      "score": 0.66
+    },
+    {
+      "unknown_text": "2017-unknown15.txt",
+      "author": "candidate2015",
+      "score": 0.51
+    },
+    {
+      "unknown_text": "2017-unknown16.txt",
+      "author": "candidate2016",
+      "score": 0.56
+    },
+    {
+      "unknown_text": "2017-unknown17.txt",
+      "author": "candidate2016",
+      "score": 0.64
+    },
+    {
+      "unknown_text": "2017-unknown18.txt",
+      "author": "candidate2016",
+      "score": 0.72
+    },
+    {
+      "unknown_text": "2017-unknown19.txt",
+      "author": "candidate2016",
+      "score": 0.63
+    },
+    {
+      "unknown_text": "2017-unknown20.txt",
+      "author": "candidate2016",
+      "score": 0.53
+    },
+    {
+      "unknown_text": "2017-unknown21.txt",
+      "author": "candidate2016",
+      "score": 0.61
+    },
+    {
+      "unknown_text": "2017-unknown22.txt",
+      "author": "candidate2016",
+      "score": 0.61
+    },
+    {
+      "unknown_text": "2017-unknown23.txt",
+      "author": "candidate2016",
+      "score": 0.7
+    },
+    {
+      "unknown_text": "2017-unknown24.txt",
+      "author": "candidate2016",
+      "score": 0.6
+    },
+    {
+      "unknown_text": "2017-unknown25.txt",
+      "author": "candidate2016",
+      "score": 0.71
+    },
+    {
+      "unknown_text": "2017-unknown26.txt",
+      "author": "candidate2015",
+      "score": 0.5
+    },
+    {
+      "unknown_text": "2017-unknown27.txt",
+      "author": "candidate2015",
+      "score": 0.62
+    },
+    {
+      "unknown_text": "2017-unknown28.txt",
+      "author": "candidate2016",
+      "score": 0.57
+    },
+    {
+      "unknown_text": "2017-unknown29.txt",
+      "author": "candidate2016",
+      "score": 0.57
+    },
+    {
+      "unknown_text": "2017-unknown30.txt",
+      "author": "candidate2015",
+      "score": 0.58
+    },
+    {
+      "unknown_text": "2017-unknown31.txt",
+      "author": "candidate2015",
+      "score": 0.5
+    },
+    {
+      "unknown_text": "2017-unknown32.txt",
+      "author": "candidate2016",
+      "score": 0.79
+    },
+    {
+      "unknown_text": "2017-unknown33.txt",
+      "author": "candidate2015",
+      "score": 0.62
+    },
+    {
+      "unknown_text": "2017-unknown34.txt",
+      "author": "candidate2016",
+      "score": 0.81
+    },
+    {
+      "unknown_text": "2017-unknown35.txt",
+      "author": "candidate2015",
+      "score": 0.6
+    },
+    {
+      "unknown_text": "2017-unknown36.txt",
+      "author": "candidate2016",
+      "score": 0.6
+    },
+    {
+      "unknown_text": "2017-unknown37.txt",
+      "author": "candidate2015",
+      "score": 0.57
+    },
+    {
+      "unknown_text": "2017-unknown38.txt",
+      "author": "candidate2016",
+      "score": 0.51
+    },
+    {
+      "unknown_text": "2017-unknown39.txt",
+      "author": "candidate2016",
+      "score": 0.56
+    },
+    {
+      "unknown_text": "2017-unknown40.txt",
+      "author": "candidate2016",
+      "score": 0.54
+    },
+    {
+      "unknown_text": "2017-unknown41.txt",
+      "author": "candidate2016",
+      "score": 0.73
+    },
+    {
+      "unknown_text": "2017-unknown42.txt",
+      "author": "candidate2016",
+      "score": 0.71
+    },
+    {
+      "unknown_text": "2017-unknown43.txt",
+      "author": "candidate2016",
+      "score": 0.72
+    },
+    {
+      "unknown_text": "2017-unknown44.txt",
+      "author": "candidate2016",
+      "score": 0.65
+    },
+    {
+      "unknown_text": "2017-unknown45.txt",
+      "author": "candidate2016",
+      "score": 0.62
+    },
+    {
+      "unknown_text": "2017-unknown46.txt",
+      "author": "candidate2016",
+      "score": 0.56
+    },
+    {
+      "unknown_text": "2017-unknown47.txt",
+      "author": "candidate2016",
+      "score": 0.54
+    },
+    {
+      "unknown_text": "2017-unknown48.txt",
+      "author": "candidate2016",
+      "score": 0.57
+    },
+    {
+      "unknown_text": "2017-unknown49.txt",
+      "author": "candidate2016",
+      "score": 0.66
+    },
+    {
+      "unknown_text": "2017-unknown50.txt",
+      "author": "candidate2016",
+      "score": 0.67
+    }
+  ]
+}

@@ -370,11 +370,30 @@ Election was rather negative.
 \subsubsection*{\centering Authorship Attribution}
 \addcontentsline{toc}{subsection}{Authorship Attribution}
 
-Since all of these posts were issued by the same political organization/entity,
-it was interesting to see if there are some common patterns between the
-Facebook ads of 2015, 2016, 2017. For this exact reason, we have performed
-authorship attribution tests and have effectively implemented two
-state-of-the art paper by Koppel et.~al.
+Since all of these posts were issued by the same organization/entity, it was
+interesting to see if there are some common patterns between the Facebook ads
+of 2015, 2016, 2017. For this exact reason, we have performed authorship
+attribution tests and have effectively implemented two state-of-the art paper
+by Koppel et.~al.
+
+\bigskip
+
+We have performed 3 authorship attribution tests:
+
+\begin{enumerate}
+  \item Assuming that the author of the Facebook posts of 2016 and 2017 was the
+        same and checking accuracy for the author of 2015.
+
+  \item Assuming that the author of the Facebook posts of 2015 and 2017 was the
+        same and checking accuracy for the author of 2016.
+
+  \item Assuming that the author of the Facebook posts of 2015 and 2016 was the
+        same and checking accuracy for the author of 2017.
+\end{enumerate}
+
+In all three cases, we had to merge some of the data to achieve the required
+minimum text length of 500 words. This was done using randomization to avoid
+bias.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography and References

@@ -21,7 +21,7 @@ clean:
 
 # Show the results
 show:
-	highlight --force --out-format=ansi ./results/answers.json
+	cat ./results/answers.json
 
 # Print the stats
 info:
