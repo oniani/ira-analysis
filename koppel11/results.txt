@@ -1,0 +1,4 @@
+Average percentage chance across all years: 67.806%
+Average percentage chance for year 2015: 72.509%
+Average percentage chance for year 2016: 68.516%
+Average percentage chance for year 2017: 62.392%

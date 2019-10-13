@@ -2,7 +2,7 @@
 %
 % Filename: ira-analysis.tex
 % Author:   David Oniani
-% Modified: October 12, 2019
+% Modified: October 13, 2019
 %  _         _____   __  __
 % | |    __ |_   _|__\ \/ /
 % | |   / _` || |/ _ \\  /
@@ -225,10 +225,17 @@ of a bigger dataset, and albeit less likely, might not be a good representatatio
 for the overall campaign.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Statistical Analysis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{\centering Statistical Analysis}
+\addcontentsline{toc}{section}{Statistical Analysis}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % General Statistics
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{\centering General Statistics}
+\subsection*{\centering General Statistics}
 \addcontentsline{toc}{section}{General Statistics}
 The distribution of posts over all three years shows a bimodal distribution
 with two peaks in quarters 2 and 4 of year 2016. Given the fact that the US
@@ -281,11 +288,23 @@ Belarus, and two regions of Georgia, which are considered by Russia as partially
 recognized states of Abkhazia and South Ossetia.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Regression Analysis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{\centering Regression Analysis}
+\addcontentsline{toc}{section}{Regression Analysis}
+Regression analysis
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Textual Analysis
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{\centering Textual Analysis}
 \addcontentsline{toc}{section}{Textual Analysis}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Common Words
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection*{\centering Common Words}
 \addcontentsline{toc}{subsection}{Common Words}
@@ -308,12 +327,6 @@ linking verbs, prepositions, pronouns, and some other (non-relevant) words.
 \caption*{Most common words in 2015, 2016, and 2017 combined.}
 \end{figure}
 
-\begin{figure}[H]
-\centering
-\includegraphics[width=\columnwidth]{./image/wordclouds/wordcloud_6.png}
-\caption*{Figure.}
-\end{figure}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Sentiment Analysis
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -333,10 +346,9 @@ persuading targeted audience.
 As the \texttt{Ad Text}s did not give us any strong proofs, we looked at the
 negativity levels across all three years and found a consistent trend.
 
-\begin{center}
+\begin{figure}[H]
+\centering
 \begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
- \hline
- \multicolumn{5}{|c|}{Analyzing Negativity}\\
  \hline
  Subjectivity & Year 2015 & Year 2016 & Year 2017 & 2016 (\%)\\
  \hline
@@ -355,7 +367,8 @@ negativity levels across all three years and found a consistent trend.
  0.05 & 1   & 5   & 2   & 62.500\\
  \hline
 \end{tabular}
-\end{center}
+\caption*{Analyzing Negativity}
+\end{figure}
 
 \bigskip
 
@@ -373,8 +386,7 @@ Election was rather negative.
 Since all of these posts were issued by the same organization/entity, it was
 interesting to see if there are some common patterns between the Facebook ads
 of 2015, 2016, 2017. For this exact reason, we have performed authorship
-attribution tests and have effectively implemented two state-of-the art paper
-by Koppel et.~al.
+attribution tests by implementing~\cite{koppel11} the paper by Koppel et.~al.
 
 \bigskip
 
@@ -392,8 +404,69 @@ We have performed 3 authorship attribution tests:
 \end{enumerate}
 
 In all three cases, we had to merge some of the data to achieve the required
-minimum text length of 500 words. This was done using randomization to avoid
-bias.
+minimum text length of 500 words.~\footnote{Note that because of randomization,
+texts were somewhat scrambled and are not available in any format. That said,
+one can easily redo the authorship attribution with similar accuracy using
+the algorithm which already implemented and resides in the GitHub repository,
+\url{https://github.com/oniani/ira-analysis/tree/master/koppel11}.}
+This was done using randomization to avoid bias.~\footnote{Results JSON:
+\url{https://github.com/oniani/ira-analysis/tree/master/koppel11/results}}
+Results are available in the form of JSON files formatted in the manner shown
+below.
+
+\begin{figure}[H]
+\begin{minted}[frame=single, linenos=true, tabsize=2]{js}
+{
+  "answers": [
+    {
+      "unknown_text": "2015-unknown1.txt",
+      "author": "candidate2016",
+      "score": 0.58
+    },
+    ...
+    {
+      "unknown_text": "2015-unknown56.txt",
+      "author": "candidate2016",
+      "score": 0.76
+    }
+  ]
+}
+\end{minted}
+\caption*{JSON example}
+\end{figure}
+
+The first answer tells us that the unknown text was written in year 2015, and
+that there is 58\% chance that it was written by the author of Facebook posts
+of 2016. The last answer shows that there is 0.76\% chance that the given
+text was authored by the entity who wrote the posts in year 2016.
+
+\bigskip
+
+Below are the results obtained after performing all three above-mentioned
+authorship attribution tasks.
+
+\begin{figure}[H]
+\centering
+\begin{tabular}{|p{8cm}|p{8cm}|}
+ \hline
+ \multicolumn{2}{|c|}{Average Accuracy}\\
+ \hline
+ Years & Similarity (\%)\\
+ \hline
+ 2016 and 2017 & 72.509\% (similarity to 2015)\\
+ \hline
+ 2015 and 2017 & 68.516\% (similarity to 2016)\\
+ \hline
+ 2015 and 2016 & 62.392\% (similarity to 2017)\\
+ \hline
+ Average (2015, 2016, and 2017) & 67.806\%\\
+ \hline
+\end{tabular}
+\caption*{Average Accuracy}
+\end{figure}
+
+\bigskip
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography and References
