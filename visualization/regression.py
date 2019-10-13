@@ -1,6 +1,6 @@
 """
 Filename: regression.py
-Modified: 2019-06-14
+Modified: 2019-10-13
 Author: David Oniani
 E-mail: onianidavid@gmail.com
 
@@ -60,7 +60,8 @@ def plot_regression(
     sns_plot = sns.regplot(x=independent, y=dependent, data=columns)
     sns_plot.set_title(title)
     sns_plot.annotate(
-        f"r = {correlation_coefficient:.3f}",
+        # Use R-squared (adjusted is not needed as we have only two variables)
+        f"r² = {correlation_coefficient**2:.3f}",
         xy=(min(reader[independent]), max(reader[dependent])),
         fontsize=16,
         weight="bold",
