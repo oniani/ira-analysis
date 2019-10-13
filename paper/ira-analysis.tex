@@ -2,7 +2,7 @@
 %
 % Filename: ira-analysis.tex
 % Author:   David Oniani
-% Modified: October 02, 2019
+% Modified: October 12, 2019
 %  _         _____   __  __
 % | |    __ |_   _|__\ \/ /
 % | |   / _` || |/ _ \\  /
@@ -189,10 +189,10 @@ election results.~\cite{ira2016}~\cite{ira2016data} Recently, some of the
 IRA-backed Facebook advertisements were released by The United States House
 Permanent Select Committee on Intelligence. All of the advertisements are in
 the PDF format. We have scraped the PDF files and present the results obtained
-by textual and statistical analysis of the above-mentioned data. Authorship
-attribution and sentiment analysis tests were also performed.~\footnote{Please
-note that this paper does not discuss neither social, nor political implications
-of these events, but attempts to explore the methods of persuasion that were
+by both textual and statistical analysis of the above-mentioned data. Authorship
+attribution and sentiment analysis tests were performed.~\footnote{Please note
+that this paper does not discuss neither social, nor political implications of
+these events, but attempts to explore the methods of persuasion that were
 employed in this influence campaign.}~\cite{ira2016csvdata} We have also made
 the data publicly available for other researchers and/or interested people in
 a much nicer and easier-to-manipulate CSV format.
@@ -276,9 +276,9 @@ Below is the chart showing the number of posts based on a currency.
 
 \bigskip
 
-The Russian ruble is used in Russia, Belarus, and two regions of Georgia, which
-are considered by Russia as partially recognised states of Abkhazia and South
-Ossetia.
+As the information for the reader, the Russian ruble is used only in Russia,
+Belarus, and two regions of Georgia, which are considered by Russia as partially
+recognized states of Abkhazia and South Ossetia.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Textual Analysis
@@ -290,20 +290,27 @@ Ossetia.
 \subsection*{\centering Common Words}
 \addcontentsline{toc}{subsection}{Common Words}
 
-Among the targeted approaches utilized by this campaign, one of the rather
-noticeable ones was attacking the fissures of the United States by realizing
-both social and political historical backgrounds.
+Among the targeting strategies utilized by this influence campaign, one of the
+rather noticeable ones was exploiting the internal fissures of the United States
+by realizing social, political, historical background of the country.
 
 \bigskip
 
-Some of the most common words used in the campaign were black, police, and
-people. Below is the barchart showing top 25 most commonly used words after
-eliminating linking verbs, prepositions, pronouns, and some other
-(non-relevant) words.
+Three most commonly used words in the campaign were black, police, and people.
+~\footnote{The list of all eliminated words is provided at\\
+\url{https://github.com/oniani/ira-analysis/blob/master/eliminated-words.txt}.}
+Below is the barchart showing top 25 most commonly used words after eliminating
+linking verbs, prepositions, pronouns, and some other (non-relevant) words.
 
 \begin{figure}[H]
 \centering
 \includegraphics[width=\columnwidth]{./image/barchart-plots/barchart_word_counts.png}
+\caption*{Most common words in 2015, 2016, and 2017 combined.}
+\end{figure}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\columnwidth]{./image/wordclouds/wordcloud_6.png}
 \caption*{Figure.}
 \end{figure}
 
@@ -325,8 +332,6 @@ persuading targeted audience.
 
 As the \texttt{Ad Text}s did not give us any strong proofs, we looked at the
 negativity levels across all three years and found a consistent trend.
-
-\bigskip
 
 \begin{center}
 \begin{tabular}{|p{3cm}|p{3cm}|p{3cm}|p{3cm}|p{3cm}|}
@@ -354,9 +359,9 @@ negativity levels across all three years and found a consistent trend.
 
 \bigskip
 
-Notice that at any subjectivity level, year 2016 is consistently comprising
-around 60\% of all posts. The year of the Presidentianl Election was rather
-rather negative.
+Notice that for any given year and at any subjectivity level, year 2016 is
+consistently comprising around 60\% of all posts. The year of the Presidentianl
+Election was rather negative.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Authorship Attribution
