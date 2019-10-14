@@ -225,89 +225,6 @@ of a bigger dataset, and albeit less likely, might not be a good representatatio
 for the overall campaign.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Statistical Analysis
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\section*{\centering Statistical Analysis}
-\addcontentsline{toc}{section}{Statistical Analysis}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% General Statistics
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection*{\centering General Statistics}
-\addcontentsline{toc}{subsection}{General Statistics}
-The distribution of posts over all three years shows a bimodal distribution
-with two peaks in quarters 2 and 4 of year 2016. Given the fact that the US
-Presidential Election was held in the fourth quarter of 2016, it is surprising
-that the number of posts in the second quarter exceeded that of the fourth
-quarter.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.75\columnwidth]{./image/barchart-plots/barchart_distribution_of_posts.png}
-\caption*{Distribution of Posts Over Years 2015, 2016, and 2017.}
-\end{figure}
-
-As for ad spendings, the fourth quarter of 2016 exceeds that of any quarter,
-with second quarter coming next. Interestingly, most of ads were paid in the
-Russian currency (ruble) with two exceptions in 2016 quarter 3 and 2017 quarter
-1 when IRA spent \$74.000 and \$35.330 respectively.
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=0.75\columnwidth]{./image/barchart-plots/barchart_ad_spend_RU_distribution.png}
-\caption*{Distribution of Ad Spendings Over Years 2015, 2016, and 2017 (in rubles).}
-\end{figure}
-
-Furthermore, 99.8\% of all paid ads across all years were paid in rubles.
-Below is the chart showing the number of posts based on a currency.
-
-\bigskip
-
-\begin{center}
-\begin{tabular}{|p{3cm}|p{3cm}|}
- \hline
- Currency & \text{Total (All Years)}\\
- \hline
- RUB  & 2549\\
- \hline
- USD  & 5\\
- \hline
- None & 787\\
- \hline
- 0    & 176\\
- \hline
-\end{tabular}
-\end{center}
-
-\bigskip
-
-As the information for the reader, the Russian ruble is used only in Russia,
-Belarus, and two regions of Georgia, which are considered by Russia as partially
-recognized states of Abkhazia and South Ossetia.
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Regression Analysis
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection*{\centering Regression Analysis}
-\addcontentsline{toc}{subsection}{Regression Analysis}
-
-\begin{figure}[H]
-\centering
-\includegraphics[width=\columnwidth]{./image/regression-plots/ad-clicks-vs-ad-impressions/year-2015-ad-clicks-vs-ad-impressions.png}
-\caption*{Year 2016 Ad Clicks VS Ad Impressions.}
-\end{figure}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Regression Analysis
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\subsection*{\centering Hypothesis Testing}
-\addcontentsline{toc}{subsection}{Hypothesis Testing}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Textual Analysis
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -480,11 +397,146 @@ authorship attribution tasks.
 \bigskip
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Authorship Attribution
+% Statistical Analysis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section*{\centering Statistical Analysis}
+\addcontentsline{toc}{section}{Statistical Analysis}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% General Statistics
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{\centering General Statistics}
+\addcontentsline{toc}{subsection}{General Statistics}
+The distribution of posts over all three years shows a bimodal distribution
+with two peaks in quarters 2 and 4 of year 2016. Given the fact that the US
+Presidential Election was held in the fourth quarter of 2016, it is surprising
+that the number of posts in the second quarter exceeded that of the fourth
+quarter.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\columnwidth]{./image/barchart-plots/barchart_distribution_of_posts.png}
+\caption*{Distribution of Posts Over Years 2015, 2016, and 2017.}
+\end{figure}
+
+As for ad spendings, the fourth quarter of 2016 exceeds that of any quarter,
+with second quarter coming next. Interestingly, most of ads were paid in the
+Russian currency (ruble) with two exceptions in 2016 quarter 3 and 2017 quarter
+1 when IRA spent \$74.000 and \$35.330 respectively.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.75\columnwidth]{./image/barchart-plots/barchart_ad_spend_RU_distribution.png}
+\caption*{Distribution of Ad Spendings Over Years 2015, 2016, and 2017 (in rubles).}
+\end{figure}
+
+Furthermore, 99.8\% of all paid ads across all years were paid in rubles.
+Below is the chart showing the number of posts based on a currency.
+
+\begin{center}
+\begin{tabular}{|p{3cm}|p{3cm}|}
+ \hline
+ Currency & \text{Total (All Years)}\\
+ \hline
+ RUB  & 2549\\
+ \hline
+ USD  & 5\\
+ \hline
+ None & 787\\
+ \hline
+ 0    & 176\\
+ \hline
+\end{tabular}
+\end{center}
+
+\bigskip
+
+As the information for the reader, the Russian ruble is used only in Russia,
+Belarus, and two regions of Georgia, which are considered by Russia as partially
+recognized states of Abkhazia and South Ossetia.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Regression Analysis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{\centering Regression Analysis}
+\addcontentsline{toc}{subsection}{Regression Analysis}
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\columnwidth]{./image/regression-plots/ad-clicks-vs-ad-impressions/year-2015-ad-clicks-vs-ad-impressions.png}
+\caption*{Year 2016 Ad Clicks VS Ad Impressions.}
+\end{figure}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Regression Analysis
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection*{\centering Hypothesis Testing}
+\addcontentsline{toc}{subsection}{Hypothesis Testing}
+
+For our first hypothesis test, we would like to determine if there is a
+statistically significant relationship between two quantitative variables:
+the length of advertisement text and the money paid for it. For this, we
+use a linear regression approach. Note that we perform the test only on
+the ads paid in rubles, the primary reason being not having enough data
+points for USD (only 5 values).
+
+$H_0$: There is a statistically significant relationship between the amount
+of money paid and the number of words in the advertisement.
+
+$H_a$: There is no statistically significant relationship between the amount
+of money paid and the number of words in the advertisement.
+
+\begin{center}
+\begin{tabular}{|p{3cm}|p{3cm}|}
+ \hline
+ \multicolumn{2}{|c|}{RUB}\\
+ \hline
+ Slope & -2.594\\
+ \hline
+ Intercept & 2980.780\\
+ \hline
+ R-squared & 0.007\\
+ \hline
+ P-value & $3.680 * 10^{-5}$\\
+ \hline
+ Standard Error & 0.627\\
+ \hline
+\end{tabular}
+\end{center}
+
+\bigskip
+
+From the chart above, we see a small R-squared value of \$0.007, as compared to
+the intercept which is huge and equals \$2980.780. The p-value is very small
+and equals $3.680 * 10^{-5}$. It tells us that model doesn't explain much of
+variation of the data but it is significant. Therefore, we accept the null and
+reject the alternative conclude that there is no statistically relationship
+between the amount of money paid and the number of words in the advertisement.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Conclusions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{\centering Conclusions}
 \addcontentsline{toc}{section}{Conclusions}
+
+Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+Aenean porta purus et sem gravida rutrum.
+Maecenas blandit nulla ac luctus tempus.
+Nam finibus posuere ante, et lacinia massa vestibulum sit amet.
+Nulla velit arcu, efficitur quis turpis nec, sollicitudin lobortis nisi.
+Vivamus ut diam ut eros faucibus fringilla.
+Suspendisse pellentesque magna nec velit tristique sollicitudin.
+Morbi ultrices nec augue et molestie.
+Nam sapien ante, ullamcorper elementum convallis id, faucibus in lectus.
+Fusce pellentesque mollis velit efficitur porta.
+Sed finibus ligula quam, et lacinia velit posuere auctor.
+Donec ligula lorem, dictum nec lectus in, vehicula tincidunt massa.
+In hac habitasse platea dictumst.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography and References
