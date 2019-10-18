@@ -2,7 +2,7 @@
 %
 % Filename: ira-analysis.tex
 % Author:   David Oniani
-% Modified: October 13, 2019
+% Modified: October 17, 2019
 %  _         _____   __  __
 % | |    __ |_   _|__\ \/ /
 % | |   / _` || |/ _ \\  /
@@ -62,6 +62,7 @@
 \usepackage[cache=false]{minted}
 \usepackage{csquotes}
 \usepackage{hyperref}
+\usepackage{subfig}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Mathematican operations and operators
@@ -461,8 +462,8 @@ recognized states of Abkhazia and South Ossetia.
 % Regression Analysis
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection*{\centering Regression Analysis}
-\addcontentsline{toc}{subsection}{Regression Analysis}
+\subsection*{\centering Hypothesis Testing}
+\addcontentsline{toc}{subsection}{Hypothesis Testing}
 
 \begin{figure}[H]
 \centering
@@ -474,48 +475,101 @@ recognized states of Abkhazia and South Ossetia.
 % Regression Analysis
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection*{\centering Hypothesis Testing}
-\addcontentsline{toc}{subsection}{Hypothesis Testing}
+\subsection*{\centering Regression Analysis}
+\addcontentsline{toc}{subsection}{Regression Analysis}
 
 For our first hypothesis test, we would like to determine if there is a
 statistically significant relationship between two quantitative variables:
-the length of advertisement text and the money paid for it. For this, we
-use a linear regression approach. Note that we perform the test only on
-the ads paid in rubles, the primary reason being not having enough data
-points for USD (only 5 values).
+the length of advertisement text and the money paid for it.
+
+\bigskip
+
+Determinining whether there is a statistically significant between these two
+variables will give us an idea if there was some kind of priority attached
+to posts, depending on the length.
+
+\bigskip
+
+For this task, we use a linear regression approach. Note that we perform the
+test only on the ads paid in rubles, the primary reason being not having enough
+data points for USD (only 5 values).
+
+\bigskip
 
 $H_0$: There is a statistically significant relationship between the amount
-of money paid and the number of words in the advertisement.
+of money paid and the length of the text in the advertisement.
 
-$H_a$: There is no statistically significant relationship between the amount
-of money paid and the number of words in the advertisement.
+\bigskip
+
+$H_0$: There is no statistically significant relationship between the amount
+of money paid and the length of the text in the advertisement.
+
+\begin{figure}
+  \centering
+  \subfloat[Money Spent VS Ad Spend Length]{{\includegraphics[width=8cm]{./image/regression-plots/ad_spend_text_length_regression.png}}}
+  \hfill
+  \subfloat[Log Money Spent VS Log Ad Spend Length]{{\includegraphics[width=8cm]{./image/regression-plots/ad_spend_text_length_regression_log_transform.png}}}
+  \caption*{Simple VS Log-transformed}
+  \label{fig:example}
+\end{figure}
+
+\bigskip
 
 \begin{center}
 \begin{tabular}{|p{3cm}|p{3cm}|}
  \hline
- \multicolumn{2}{|c|}{RUB}\\
+ \multicolumn{2}{|c|}{RUB (Without Log Transform)}\\
  \hline
- Slope & -2.594\\
+ Slope          & -2.594\\
  \hline
- Intercept & 2980.780\\
+ Intercept      & 2980.780\\
  \hline
- R-squared & 0.007\\
+ R-squared      & 0.007\\
  \hline
- P-value & $3.680 * 10^{-5}$\\
+ P-value        & $3.680 * 10^{-5}$\\
  \hline
  Standard Error & 0.627\\
+ \hline
+\end{tabular}
+\qquad
+\begin{tabular}{|p{3cm}|p{3cm}|}
+ \hline
+ \multicolumn{2}{|c|}{RUB (With Log Transform)}\\
+ \hline
+ Slope          & -0.015\\
+ \hline
+ Intercept      & 5.904\\
+ \hline
+ R-squared      & 0.0001\\
+ \hline
+ P-value        & $0.594 * 10^{-5}$\\
+ \hline
+ Standard Error & 0.028\\
  \hline
 \end{tabular}
 \end{center}
 
 \bigskip
 
-From the chart above, we see a small R-squared value of \$0.007, as compared to
-the intercept which is huge and equals \$2980.780. The p-value is very small
-and equals $3.680 * 10^{-5}$. It tells us that model doesn't explain much of
-variation of the data but it is significant. Therefore, we accept the null and
-reject the alternative conclude that there is no statistically relationship
-between the amount of money paid and the number of words in the advertisement.
+From the chart above, we see the R-squared value of \$0.007, which tells us
+that only 0.7\% of variation in the money paid for advertisements is explained
+by the number of words. Standard error is 0.627 which is very small compared
+to the intercept whose value is 2980.780 (RUB). This tells us that the error
+in our estimates is really small. The p-value equals $3.680 * 10^{-5}$ which
+is a lot smaller than $0.05$ and makes the conclusion statistically significant.
+Therefore, we accept the null and reject the alternative conclude that there
+is no statistically relationship between the amount of money paid and the
+number of words in the advertisement.
+
+\bigskip
+
+Even after performing a log-transform, the results are still bleak.
+
+\bigskip
+
+Although having no relationship is usually not a desired result, in our case,
+we conclue that posts were designed in a rather smart manner, with no
+noticeable priorities attached, depending on the number of words in the post.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Conclusions
