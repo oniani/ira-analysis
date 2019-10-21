@@ -65,7 +65,7 @@
 \usepackage{subfig}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Mathematican operations and operators
+% Mathematical operations and operators
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 % Sets and related operators
@@ -161,7 +161,9 @@
         \href{mailto:oniada01@luther.edu}{oniada01@luther.edu}}
 
 % Title
-\title{\textbf{Textual and Statistical Analysis of Russian IRA Facebook Posts}}
+\title{\textbf{Textual and Statistical Analysis of Russian IRA Facebook Posts}\\
+      \small \textsuperscript{*}The paper is written in the scope of a student-faculty collaborative\\
+                                summer research with professor Richard K. Merritt (\href{mailto:merritri@luther.edu}{merritri@luther.edu}).}
 
 % Date
 \date{October 25, 2019}
@@ -248,8 +250,8 @@ police, and people.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.75\columnwidth]{./image/barchart-plots/barchart_word_counts.png}
-\caption*{Most common words in 2015, 2016, and 2017 combined.}
+\includegraphics[width=\columnwidth]{./image/barchart-plots/barchart_word_counts.png}
+\caption{Most common words in 2015, 2016, and 2017 combined.}
 \end{figure}
 
 It is apparent that the vast majority of the Facebook posts featured words and
@@ -278,7 +280,7 @@ intelligent design of advertisements.
 \bigskip
 
 As the \texttt{Ad Text}s did not give us any strong evidences, we looked at the
-negativity levels across all three years and found a consistent trend.
+negativity levels across all three years and found a consistent trend (Figure 2).
 
 \begin{figure}[H]
 \centering
@@ -301,7 +303,7 @@ negativity levels across all three years and found a consistent trend.
  0.05 & 1   & 5   & 2   & 62.500\\
  \hline
 \end{tabular}
-\caption*{Analyzing Negativity}
+\caption{Analyzing Negativity}
 \end{figure}
 
 \bigskip
@@ -368,7 +370,7 @@ below.
   ]
 }
 \end{minted}
-\caption*{JSON example}
+\caption{JSON example}
 \end{figure}
 
 The first answer tells us that the unknown text was written in year 2015, and
@@ -378,7 +380,7 @@ text was authored by the entity who wrote the posts in year 2016.
 
 \bigskip
 
-Below are the results obtained after performing all three above-mentioned
+Figure 4 shows the results obtained after performing all three above-mentioned
 authorship attribution tests.
 
 \begin{figure}[H]
@@ -396,7 +398,7 @@ authorship attribution tests.
  Average (2015, 2016, and 2017) & 67.806\%\\
  \hline
 \end{tabular}
-\caption*{Average Similarity}
+\caption{Average Similarity}
 \end{figure}
 
 On average, there is approximately 68\% similarity across texts suggesting that
@@ -416,8 +418,8 @@ number of posts in the second quarter exceeded that of the fourth quarter.
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.75\columnwidth]{./image/barchart-plots/barchart_distribution_of_posts.png}
-\caption*{Distribution of Posts Over Years 2015, 2016, and 2017.}
+\includegraphics[width=\columnwidth]{./image/barchart-plots/barchart_distribution_of_posts.png}
+\caption{Distribution of Posts Over Years 2015, 2016, and 2017.}
 \end{figure}
 
 As for the ad spendings, the fourth quarter of 2016 exceeds that of any quarter,
@@ -427,13 +429,14 @@ Russian currency (ruble) with two exceptions (4 posts in total) in 2016 quarter
 
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.75\columnwidth]{./image/barchart-plots/barchart_ad_spend_RU_distribution.png}
-\caption*{Distribution of Ad Spendings Over Years 2015, 2016, and 2017 (in rubles).}
+\includegraphics[width=\columnwidth]{./image/barchart-plots/barchart_ad_spend_RU_distribution.png}
+\caption{Distribution of Ad Spendings Over Years 2015, 2016, and 2017 (in rubles).}
 \end{figure}
 
 Furthermore, 99.8\% of all paid ads across all years were paid in rubles.
-Below is the chart showing the number of posts based on a currency.
+Figure 7 shows a chart with the number of posts based on a currency.
 
+\begin{figure}[H]
 \begin{center}
 \begin{tabular}{|p{3cm}|p{3cm}|}
  \hline
@@ -449,6 +452,8 @@ Below is the chart showing the number of posts based on a currency.
  \hline
 \end{tabular}
 \end{center}
+\caption{Number of Posts Depending on the Currency.}
+\end{figure}
 
 \bigskip
 
@@ -480,7 +485,7 @@ data points for USD (only 5 values).
   \subfloat[Money Spent VS Ad Spend Length]{{\includegraphics[width=8cm]{./image/regression-plots/ad_spend_text_length_regression.png}}}
   \hfill
   \subfloat[Log Money Spent VS Log Ad Spend Length]{{\includegraphics[width=8cm]{./image/regression-plots/ad_spend_text_length_regression_log_transform.png}}}
-  \caption*{Simple VS Log-transformed}
+  \caption{Simple VS Log-transformed}
   \label{fig:example}
 \end{figure}
 
