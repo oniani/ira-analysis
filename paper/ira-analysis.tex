@@ -341,13 +341,13 @@ We have performed 3 authorship attribution tests:
         same and checking accuracy for the author of 2017.
 \end{enumerate}
 
-In all three cases, we had to merge some of the data to meet the required
+In all three cases, we had to merge different posts to meet the required
 minimum text length of 500 words.~\footnote{Note that because of randomization,
 texts were somewhat scrambled and are not available in any format. That said,
-one can easily redo the authorship attribution with similar accuracy using
-the algorithm which is already implemented and resides in the GitHub repository,
-\url{https://github.com/oniani/ira-analysis/tree/master/koppel11}.}
-This was done using randomization to avoid bias.~\footnote{Results JSON:
+one can easily redo the authorship attribution with similar accuracy using the
+algorithm which is already implemented and resides in the GitHub repository,
+\url{https://github.com/oniani/ira-analysis/tree/master/koppel11}.} This was
+done using randomization to avoid bias.~\footnote{Results JSON:
 \url{https://github.com/oniani/ira-analysis/tree/master/koppel11/results}}
 Results are available in the form of JSON files formatted in the manner shown
 below.
@@ -461,6 +461,21 @@ As the information for the reader, the Russian ruble is used only in Russia,
 Belarus, and two regions of Georgia, which are considered by Russia as partially
 recognized states of Abkhazia and South Ossetia.
 
+IRA was rather liberal toward age with 69.542\% of all advertisements being
+targeted toward individuals aging from 18 up. Figure 8 shows the distribution
+of these ads.
+
+\begin{figure}[H]
+\centering
+\includegraphics[width=\columnwidth]{./image/barchart-plots/barchart_targeted_age.png}
+\caption{Distribution of Posts Based on Age (Years 2015, 2016, and 2017).}
+\end{figure}
+
+Interestingly, nearly all advertisements which targeted the age category of
+15 -- 25 were all featuring the website \url{musicfb.info} which
+~\cite{musicfb-info} appears to be a Chrome extension (currently unavailable)
+and was registered in Saint Petersburg, Russia (location of IRA headquarters).
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Regression Analysis
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -494,9 +509,12 @@ data points for USD (only 5 values).
 The first plot showed no strong relationship between the response and the
 predictor. That said, the shape of the plot hinted us to apply the log
 transformation. The log transformation, once again, verified our assumption
-of no relationship. The numerical data shown below further reinforces our
+of no relationship. The numerical data shown in Figure 9 further reinforces our
 observations.
 
+\bigskip
+
+\begin{figure}[H]
 \begin{center}
 \begin{tabular}{|p{3cm}|p{3cm}|}
  \hline
@@ -530,6 +548,8 @@ observations.
  \hline
 \end{tabular}
 \end{center}
+\caption{Linear Regression Analysis Results.}
+\end{figure}
 
 \bigskip
 
