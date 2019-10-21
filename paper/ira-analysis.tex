@@ -190,7 +190,7 @@ Committee on Intelligence. All of the advertisements are in the PDF format. We
 have scraped the PDF files and present the results obtained by both textual and
 statistical analyses of the above-mentioned data. Authorship attribution and
 sentiment analysis were also performed.~\footnote{Please note that this paper
-does not discuss political implications of these actions, but attempts to
+does not discuss the political implications of these actions, but attempts to
 explore the methods of persuasion that were employed in this influence
 campaign.}~\cite{ira2016csvdata} In addition, we have made the data publicly
 available for other researchers and/or interested people in a much nicer and
@@ -257,8 +257,8 @@ phrases related to race and race-based discrimination. Words related to
 ``taking action'' such as ``join'', ``stop'', ``do'', ``follow'' etc. were used
 extensively for persuasive purposes. These words in combination with other words
 like ``american'', ``matters'', ``community'' etc.~further increased the
-persuasive quality of the advertisement by touching it up with a sense of
-cultural and social identities.
+persuasive quality of the advertisement by metaphorically connecting it with
+cultural and social identities of people.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Sentiment Analysis
@@ -269,14 +269,15 @@ cultural and social identities.
 
 For the sentiment analysis purposes, we used \texttt{python}'s
 \texttt{TextBlob} library. Suprisingly, out of all Facebook posts with
-\texttt{Ad Text}, 1643 were positive, 900 negative, and 933 neutral leaving the
-overall tone of the posts positive. Yet, the statistical significance of this
-claim is rather questionable as the polarity levels were always near zero. Such
-low polarity level, however, demonstrates a highly intelligent design of posts.
+non-empty \texttt{Ad Text} value, 1643 were positive, 900 negative, and 933
+neutral leaving the overall tone of the posts positive. Yet, the statistical
+significance of this claim is rather questionable as the polarity levels were
+always near zero. Such low polarity level, however, demonstrates a highly
+intelligent design of advertisements.
 
 \bigskip
 
-As the \texttt{Ad Text}s did not give us any strong proofs, we looked at the
+As the \texttt{Ad Text}s did not give us any strong evidences, we looked at the
 negativity levels across all three years and found a consistent trend.
 
 \begin{figure}[H]
@@ -307,10 +308,9 @@ negativity levels across all three years and found a consistent trend.
 
 Notice that for any given year and at any subjectivity level, year 2016 is
 consistently comprising around 60\% of all posts. The suddent change in
-strategy and increased levels of negativity can be linked to calling people
-to ``take an action'' (against those who made America poor) and at the same
-time promoting their favored candidate. The year of the Presidential Election
-was rather negative.
+strategy and increased levels of negativity could be linked to making people
+take an action by voting for candidates promoted by these ads. The year of the
+Presidential Election was rather negative.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Authorship Attribution
@@ -321,8 +321,8 @@ was rather negative.
 
 Since all of these posts were issued by the same organization/entity, it was
 interesting to see if there are some common patterns between the Facebook ads
-of 2015, 2016, 2017. For this exact reason, we have performed authorship
-attribution tests by implementing~\cite{koppel11} the paper by Koppel et.~al.
+of 2015, 2016, 2017. For this reason, we have performed authorship attribution
+tests by implementing~\cite{koppel11} the paper by Koppel et.~al.
 
 \bigskip
 
@@ -379,7 +379,7 @@ text was authored by the entity who wrote the posts in year 2016.
 \bigskip
 
 Below are the results obtained after performing all three above-mentioned
-authorship attribution tasks.
+authorship attribution tests.
 
 \begin{figure}[H]
 \centering
@@ -400,7 +400,7 @@ authorship attribution tasks.
 \end{figure}
 
 On average, there is approximately 68\% similarity across texts suggesting that
-the design strategy for these posts were roughly the same.
+the design strategy for these posts were roughly similar.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % General Statistics
@@ -409,11 +409,10 @@ the design strategy for these posts were roughly the same.
 \section*{\centering General Statistics}
 \addcontentsline{toc}{section}{General Statistics}
 
-The distribution of posts over all three years shows a bimodal distribution
-with two peaks in quarters 2 and 4 of year 2016. Given the fact that the US
-Presidential Election was held in the fourth quarter of 2016, it is surprising
-that the number of posts in the second quarter exceeded that of the fourth
-quarter.
+The distribution of posts over all three years shows a bimodal nature with two
+peaks in quarters 2 and 4 of year 2016. Given the fact that the US Presidential
+Election was held in the fourth quarter of 2016, it is surprising that the
+number of posts in the second quarter exceeded that of the fourth quarter.
 
 \begin{figure}[H]
 \centering
@@ -535,9 +534,6 @@ by the number of words. Standard error is 0.627 which is very small compared
 to the intercept whose value is 2980.780 (RUB). This tells us that the error
 in our estimates is really small. The p-value equals $3.680 * 10^{-5}$ which
 is a lot smaller than $0.05$ and makes the conclusion statistically significant.
-Therefore, we accept the null and reject the alternative conclude that there
-is no statistically relationship between the amount of money paid and the
-number of words in the advertisement.
 
 \bigskip
 
@@ -560,8 +556,10 @@ no noticeable priorities depending on the number of words in the text section.
 
 We have scraped PDF files made publicly available by The United States House
 Permanent Select Committee on Intelligence and performed a number of different
-analyses including textual, linguistic, and pure-statistical. The results
-obtained showed a clear attempt of influencing people.
+analyses including textual and statistical. The results obtained gave us
+insights about the approaches used in the influence campaign. That said, there
+is a lot more that could be analyzed using the provided datasets and any
+researcher and/or interested person is free to use them for their own research.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Bibliography and References
