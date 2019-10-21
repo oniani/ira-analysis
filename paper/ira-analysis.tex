@@ -2,7 +2,7 @@
 %
 % Filename: ira-analysis.tex
 % Author:   David Oniani
-% Modified: October 19, 2019
+% Modified: October 20, 2019
 %  _         _____   __  __
 % | |    __ |_   _|__\ \/ /
 % | |   / _` || |/ _ \\  /
@@ -161,12 +161,10 @@
         \href{mailto:oniada01@luther.edu}{oniada01@luther.edu}}
 
 % Title
-\title{\textbf{Textual and Statistical Analysis of Russian IRA Facebook Posts}\\
-      \small \textsuperscript{*}The paper is written in the scope of a student-faculty collaborative\\
-                                summer research with professor Richard K. Merritt.}
+\title{\textbf{Textual and Statistical Analysis of Russian IRA Facebook Posts}}
 
 % Date
-\date{Month Day, Year}
+\date{October 25, 2019}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Beginning of the document
@@ -192,7 +190,7 @@ Committee on Intelligence. All of the advertisements are in the PDF format. We
 have scraped the PDF files and present the results obtained by both textual and
 statistical analyses of the above-mentioned data. Authorship attribution and
 sentiment analysis were also performed.~\footnote{Please note that this paper
-does not discuss political implications of the campaign, but attempts to
+does not discuss political implications of these actions, but attempts to
 explore the methods of persuasion that were employed in this influence
 campaign.}~\cite{ira2016csvdata} In addition, we have made the data publicly
 available for other researchers and/or interested people in a much nicer and
@@ -222,7 +220,7 @@ formatted in a way that it was virtually impossible for \texttt{pdftotext} to
 parse them correctly. Due to this reason, we have manually reviewed most of the
 CSV files for validity.~\cite{ira2016csvdata} All the CSV files have been made
 publicly available. It is important to note that the dataset is just a sample
-of a bigger dataset and, albeit LESS LIKELY, might not be a good
+of a bigger dataset and, albeit \textit{less likely}, might not be a good
 representatation of the overall campaign.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -240,11 +238,13 @@ above-mentioned issues.
 
 \bigskip
 
+The words choice played a crucial role in the persuasive quality of posts.
+Below is the barchart showing top 25 most commonly used words after eliminating
+linking verbs, prepositions, pronouns, and some other
 ~\footnote{The list of all eliminated words is provided at\\
 \url{https://github.com/oniani/ira-analysis/blob/master/eliminated-words.txt}.}
-Below is the barchart showing top 25 most commonly used words after eliminating
-linking verbs, prepositions, pronouns, and some other (non-relevant) words.
-Three most commonly used words in the campaign were black, police, and people.
+non-relevant words. Three most commonly used words in the campaign were black,
+police, and people.
 
 \begin{figure}[H]
 \centering
@@ -253,11 +253,12 @@ Three most commonly used words in the campaign were black, police, and people.
 \end{figure}
 
 It is apparent that the vast majority of the Facebook posts featured words and
-phrases related to race and race-based discrimination. Words related to ``taking
-action'' such as ``join'', ``stop'', ``do'', ``follow'' etc. were used extensively
-for persuasive purposes. These words in combination with other words like ``american'',
-``matters'', ``community'' etc.~further increased the persuasive quality of the
-advertisement.
+phrases related to race and race-based discrimination. Words related to
+``taking action'' such as ``join'', ``stop'', ``do'', ``follow'' etc. were used
+extensively for persuasive purposes. These words in combination with other words
+like ``american'', ``matters'', ``community'' etc.~further increased the
+persuasive quality of the advertisement by touching it up with a sense of
+cultural and social identities.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Sentiment Analysis
@@ -265,12 +266,13 @@ advertisement.
 
 \section*{\centering Sentiment Analysis}
 \addcontentsline{toc}{section}{Sentiment Analysis}
-For the sentiment analysis purposes, we used \texttt{python}'s \texttt{TextBlob}
-library. Suprisingly, out of all Facebook posts with \texttt{Ad Text}, 1643 were
-positive, 900 negative, and 933 neutral leaving the overall tone of the posts
-positive. Yet, the statistical significance of this claim is rather questionable
-as the polarity levels were always near zero. Such low polarity level, however,
-demonstrates a highly intelligent design of posts.
+
+For the sentiment analysis purposes, we used \texttt{python}'s
+\texttt{TextBlob} library. Suprisingly, out of all Facebook posts with
+\texttt{Ad Text}, 1643 were positive, 900 negative, and 933 neutral leaving the
+overall tone of the posts positive. Yet, the statistical significance of this
+claim is rather questionable as the polarity levels were always near zero. Such
+low polarity level, however, demonstrates a highly intelligent design of posts.
 
 \bigskip
 
@@ -304,8 +306,11 @@ negativity levels across all three years and found a consistent trend.
 \bigskip
 
 Notice that for any given year and at any subjectivity level, year 2016 is
-consistently comprising around 60\% of all posts. The year of the Presidential
-Election was rather negative.
+consistently comprising around 60\% of all posts. The suddent change in
+strategy and increased levels of negativity can be linked to calling people
+to ``take an action'' (against those who made America poor) and at the same
+time promoting their favored candidate. The year of the Presidential Election
+was rather negative.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Authorship Attribution
@@ -334,11 +339,11 @@ We have performed 3 authorship attribution tests:
         same and checking accuracy for the author of 2017.
 \end{enumerate}
 
-In all three cases, we had to merge some of the data to achieve the required
+In all three cases, we had to merge some of the data to meet the required
 minimum text length of 500 words.~\footnote{Note that because of randomization,
 texts were somewhat scrambled and are not available in any format. That said,
 one can easily redo the authorship attribution with similar accuracy using
-the algorithm which already implemented and resides in the GitHub repository,
+the algorithm which is already implemented and resides in the GitHub repository,
 \url{https://github.com/oniani/ira-analysis/tree/master/koppel11}.}
 This was done using randomization to avoid bias.~\footnote{Results JSON:
 \url{https://github.com/oniani/ira-analysis/tree/master/koppel11/results}}
@@ -394,12 +399,16 @@ authorship attribution tasks.
 \caption*{Average Similarity}
 \end{figure}
 
+On average, there is approximately 68\% similarity across texts suggesting that
+the design strategy for these posts were roughly the same.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % General Statistics
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{\centering General Statistics}
 \addcontentsline{toc}{section}{General Statistics}
+
 The distribution of posts over all three years shows a bimodal distribution
 with two peaks in quarters 2 and 4 of year 2016. Given the fact that the US
 Presidential Election was held in the fourth quarter of 2016, it is surprising
