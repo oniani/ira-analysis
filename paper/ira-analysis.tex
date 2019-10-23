@@ -78,7 +78,7 @@
 % PDF information and nice-looking urls
 \hypersetup{%
   pdfauthor={David Oniani},
-  pdftitle={Textual and Statistical Analysis of Russian IRA Facebook Posts},
+  pdftitle={Textual and Statistical Analysis of Russian IRA Facebook Advertisements},
   pdfsubject={Statistics, Textual Analysis, Influence Campaign},
   pdfkeywords={Statistics, Textual, Influence, Campaign, Intelligence},
   pdflang={English},
@@ -90,7 +90,7 @@
 
 % Put a centered header of a footnote size on the top of each page
 \chead{\footnotesize{\MakeUppercase{Textual and Statistical Analysis of Russian
-                                    IRA Facebook Posts}}}
+                                    IRA Facebook Advertisements}}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Author(s), title, and date
@@ -102,7 +102,7 @@
         \href{mailto:oniada01@luther.edu}{oniada01@luther.edu}}
 
 % Title
-\title{\textbf{Textual and Statistical Analysis of Russian IRA Facebook Posts}\\
+\title{\textbf{Textual and Statistical Analysis of Russian IRA Facebook Advertisements}\\
        \medskip
        \small \textsuperscript{*}The paper is written in the scope of a
        student-faculty collaborative\\ summer research with professor Richard
@@ -135,7 +135,7 @@ Select Committee on Intelligence. All of the advertisements are in the PDF
 format. We have scraped the PDF files and present the results obtained by both
 textual and statistical analysis of the above-mentioned data. Authorship
 attribution and sentiment analysis were also performed.~\footnote{Please note
-that this paper does not discuss the political implications of these actions,
+that the paper does not discuss the political implications of these actions,
 but attempts to explore the methods of persuasion that were employed in this
 influence campaign.}~\cite{ira2016csvdata} In addition, we have made the data
 publicly available for other researchers and/or interested people in a much
@@ -158,11 +158,12 @@ nicer and easier-to-manipulate CSV format.
 \addcontentsline{toc}{section}{Data and Preparation}
 
 The dataset was scraped from~\cite{ira2016data} more than 3,500 Russian IRA
-Facebook posts made publicly available in the PDF format by the House
-Intelligence Committee. We used the free and open-source Python library
-~\cite{pdftotext} \texttt{pdftotext} to scrape the data. Many CSV files were
+Facebook~\footnote{In the paper, words ``advertisement'' and ``post'' are used
+interchangeably.} posts made publicly available in the PDF format by the House
+Intelligence Committee. We used a free and open-source \texttt{Python} library
+~\cite{pdftotext} \texttt{pdftotext} to scrape the data. Many PDF files were
 formatted in a way that it was virtually impossible for \texttt{pdftotext} to
-parse them correctly. Due to this reason, we have manually reviewed most of the
+parse them correctly. For this reason, we have manually reviewed most of the
 CSV files for validity.~\cite{ira2016csvdata} All the CSV files have been made
 publicly available. It is important to note that the dataset is just a sample
 of a bigger dataset and, albeit \textit{less likely}, might not be a good
@@ -177,19 +178,18 @@ representation of the overall campaign.
 
 Among the strategies utilized by this influence campaign, one that stood out
 the most was the exploitation of internal issues of the United States by
-realizing the social, political, and historical backgrounds of the country.
-An overwhelming number of advertisements referenced issues including race,
-police, immigration, religion, and guns.
+leveraging the social, political, and historical backgrounds of the country.
 
 \bigskip
 
-The words choice played a crucial role in the persuasive quality of posts.
-Below is the bar chart with top 25 most commonly used words after eliminating
-linking verbs, prepositions, pronouns, and some other
+The word choice played a crucial role in the effectiveness of the influence
+campaign. An overwhelming number of advertisements referenced issues including
+race, police, immigration, religion, and guns. Figure 1 shows a bar chart with
+TOP 25 most commonly used words after eliminating linking verbs, prepositions,
+pronouns, and other
 ~\footnote{The list of all eliminated words is provided at\\
 \url{https://github.com/oniani/ira-analysis/blob/master/eliminated-words.txt}.}
-non-relevant words. Three most commonly used words in the campaign were black,
-police, and people.
+non-relevant words.
 
 \begin{figure}[H]
 \centering
@@ -197,14 +197,19 @@ police, and people.
 \caption{Most common words in 2015, 2016, and 2017 combined.}
 \end{figure}
 
-The vast majority of the Facebook ads featured words and phrases related to
-race and race-based discrimination. Words associated with ``taking action''
-such as ``join'', ``stop'', ``do'', ``follow'' etc.~were used extensively for
-persuasive purposes. These words in combination with others such  as ``American'',
-``matters'', ``community'' etc.~further increased the persuasive quality of the
-advertisement by metaphorically connecting it with cultural and social identities
-of people and fueling hateful rhetoric. More than 50\% of the posts referenced
-race and generated for over 25 million ad impressions.
+The vast majority of Facebook ads featured words and phrases related to race
+and race-based discrimination. More than 50\% of the posts referenced race and
+generated over 25 million ad impressions.
+
+\bigskip
+
+Words associated with ``taking action'' such as ``join'', ``stop'', ``do'',
+``follow'' etc.~were used extensively for persuasive purposes. Three most
+commonly used words were ``black'', ``police'', and ``people''. These words in
+combination with others such as ``American'', ``matters'', ``community'' etc.
+further increased the persuasive quality of advertisements by metaphorically
+connecting it with cultural and social identities of people and fueling hateful
+rhetoric.
 
 \bigskip
 
@@ -219,13 +224,12 @@ presidential candidates at the time) accounting for 61,774 ad clicks and
 \section*{\centering Sentiment Analysis}
 \addcontentsline{toc}{section}{Sentiment Analysis}
 
-For the sentiment analysis purposes, we used \texttt{Python}'s
-\texttt{TextBlob} library. Interestingly, out of all Facebook posts with a
-non-empty \texttt{Ad Text} value, 1643 were positive, 900 negative, and 933
-neutral leaving the overall tone of the posts positive. Yet, the statistical
-significance of this claim is questionable as the polarity levels were always
-near zero. Such low polarity level, however, demonstrates a highly intelligent
-design of advertisements.
+For sentiment analysis, we used a free and open-source \texttt{Python} library
+\texttt{TextBlob}. Interestingly, out of all Facebook posts with a non-empty
+\texttt{Ad Text} value, 1643 were positive, 900 negative, and 933 neutral
+leaving the overall tone of the posts positive. Yet, the claim is not strong
+or significant as the polarity levels were always near zero. Such low polarity
+levels, however, demonstrate a highly intelligent design of advertisements.
 
 \bigskip
 
@@ -256,11 +260,11 @@ negativity levels across all three years and found a consistent trend (Figure 2)
   \caption{Analyzing Negativity}
 \end{figure}
 
-Notice that for any given year and at any subjectivity level, year 2016 is
-consistently comprising around 60\% of all posts. The sudden change in
-strategy and increased levels of negativity could be linked to making people
-take an action by voting for candidates promoted by these ads. The year of the
-Presidential Election was rather negative.
+Notice that for any given year and at any subjectivity level, year 2016
+consistently comprises around 60\% of all posts. The sudden change in strategy
+and increased levels of negativity could be linked to approaching Presidential
+Election making people take an action by voting for candidates promoted by
+these ads. The year of the Presidential Election was rather negative.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Authorship Attribution
@@ -322,9 +326,9 @@ below.
 \end{figure}
 
 The first answer tells us that the unknown text was written in year 2015, and
-that there is 58\% chance that it was written by the author of Facebook ads
-of year 2016. The last answer shows that there is 0.76\% chance that the given
-ad, which was posted in 2015, was authored by the entity who wrote the posts in
+that there is 58\% chance that it was written by the author of Facebook ads of
+year 2016. The last answer shows that there is 76\% chance that the given ad,
+which was posted in 2015, was authored by the entity who wrote the posts in
 year 2016.
 
 \bigskip
@@ -360,7 +364,7 @@ the design strategy for these posts were roughly similar.
 \section*{\centering General Statistics}
 \addcontentsline{toc}{section}{General Statistics}
 
-The distribution of posts across all three years shows a bimodal nature with
+The distribution of posts across all three years is of a bimodal nature with
 two peaks in quarters 2 and 4 of the year 2016. Given the fact that the US
 Presidential Election was held in the fourth quarter of 2016, it is surprising
 that the number of posts in the second quarter exceeded that of the fourth
@@ -406,8 +410,8 @@ in rubles. Figure 7 shows a chart with the number of posts based on currency.
 ~\footnotetext{None values can be considered 0.}
 
 As the information for the reader, the Russian ruble is used only in Russia,
-Belarus, and two regions of Georgia, which are considered by Russia as partially
-recognized states of Abkhazia and South Ossetia.
+Belarus, and two regions of Georgia, which are considered by Russia as
+partially recognized states of Abkhazia and South Ossetia.
 
 \bigskip
 
@@ -420,10 +424,12 @@ all individuals of age 18 or more. Figure 8 shows the distribution of these ads.
 \caption{Distribution of Posts Based on Age (Years 2015, 2016, and 2017).}
 \end{figure}
 
-Surprisingly, nearly all advertisements that targeted the age category of
-15 -- 25 featured a website \url{musicfb.info} which ~\cite{musicfb-info}
-appears to be a Chrome extension (currently unavailable) and was registered in
-Saint Petersburg, Russia (location of IRA headquarters).
+Surprisingly, nearly all advertisements that targeted the 15 -- 25 age category
+featured a website \url{musicfb.info} which ~\cite{musicfb-info} appears to be
+link to a Chrome extension (currently unavailable) and was registered in Saint
+Petersburg, Russia (location of IRA). This is a notable fact since music is
+strongly linked to emotions and can be used as a powerful weapon of
+manipulation.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Regression Analysis
@@ -436,13 +442,13 @@ We would like to determine if there is a statistically significant relationship
 between two quantitative variables: the textual length of an advertisement and
 money spent on it. Finding the relationship between these variables will give
 us an idea if there was some kind of priority attached to posts, depending on
-its textual length.
+the textual length.
 
 \bigskip
 
 For this task, we use a linear regression approach. Note that we perform the
-test only on the ads paid in rubles, the primary reason being not having enough
-data points for USD (only 5 values).
+analysis only on the ads paid in rubles, the primary reason being not having
+enough data points for USD (only 5 values).
 
 \begin{figure}[H]
   \centering
@@ -450,11 +456,10 @@ data points for USD (only 5 values).
   \hfill
   \subfloat[Log Money Spent VS Log Ad Spend Length]{{\includegraphics[width=0.5\linewidth]{./image/regression-plots/ad_spend_text_length_regression_log_transform.png}}}
   \caption{Simple VS Log-transformed}
-  \label{fig:example}
 \end{figure}
 
 The first plot showed no strong relationship between the response and the
-predictor. That said, the shape of the plot hints to apply the log
+predictor. That said, the shape of the plot hinted us to apply the log
 transformation. The log transformation, once again, verified our assumption
 of no relationship. The numerical data in Figure 9 further reinforces our
 observations.
