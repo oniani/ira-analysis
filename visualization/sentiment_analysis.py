@@ -22,7 +22,11 @@ import textblob as tb
 def analyze_negativity(data, subjectivity) -> float:
     """Determine sentiment."""
 
-    data = [text.replace("\n", " ") for text in data if text != "N/A"]
+    data = [
+        text.replace("\n", " ")
+        for text in data
+        if text != "N/A" and text != ""
+    ]
 
     neg_polarity = 0
     for text in data:
@@ -39,7 +43,11 @@ def analyze_negativity(data, subjectivity) -> float:
 def sentiment_stats_numerical(data) -> None:
     """Determine sentiment."""
 
-    data = [text.replace("\n", " ") for text in data if text != "N/A"]
+    data = [
+        text.replace("\n", " ")
+        for text in data
+        if text != "N/A" and text != ""
+    ]
 
     pos_polarity = 0
     neg_polarity = 0

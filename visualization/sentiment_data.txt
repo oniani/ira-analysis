@@ -4,7 +4,7 @@ Sentiment Analysis
 All Years
 Positive: 1643
 Negative: 900
-Neutral:  933
+Neutral:  932
 
 ==================
 
@@ -16,7 +16,7 @@ Neutral:  140
 Year 2016
 Positive: 826
 Negative: 568
-Neutral:  443
+Neutral:  442
 
 Year 2017
 Positive: 498
@@ -55,7 +55,7 @@ Neutral:  180
 Year 2016 Quarter 3
 Positive: 118
 Negative: 99
-Neutral:  59
+Neutral:  58
 
 Year 2016 Quarter 4
 Positive: 299
