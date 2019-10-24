@@ -1,4 +1,4 @@
-# Textual and Statistical Analysis of IRA Facebook Posts
+# Textual and Statistical Analysis of Russian IRA Facebook Advertisements
 
 **This repository is a workspace for developing and creating
 research tools, software, datasets, etc.**
@@ -10,15 +10,18 @@ research tools, software, datasets, etc.**
 ├── LICENSE        # A license for the project
 ├── data           # Data storage
 ├── pdf-scraping   # Tools for PDF scraping
+├── paper          # Paper
+├── koppel11       # Implementation of the paper "koppel11"
 └── visualization  # Programs and scripts for statistical visualizations
 ```
 
 ## Working with Data
 
-The recommended way of working with the CSV data is using the
-`pandas` library. `pandas` provides a user-friendly environment
-for working with data in the tabular format. See an example below.
-Alternatively, one could also use Python's built-in `csv` module.
+The recommended way of working with the CSV data is using the `pandas` library.
+`pandas` provides a user-friendly environment for working with data in the
+tabular format. See an example below. Alternatively, one could also use
+Python's built-in `csv` module (or other programming language of preference and
+its tools).
 
 ```python3
 Python 3.7.3 (default, Mar 27 2019, 09:23:15)
