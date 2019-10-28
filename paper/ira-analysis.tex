@@ -2,7 +2,7 @@
 %
 % Filename: ira-analysis.tex
 % Author:   David Oniani
-% Modified: October 24, 2019
+% Modified: October 28, 2019
 %  _         _____   __  __
 % | |    __ |_   _|__\ \/ /
 % | |   / _` || |/ _ \\  /
@@ -15,7 +15,7 @@
 % Document definition
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[11pt]{article}
+\documentclass{article}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Packages and related settings
@@ -37,27 +37,7 @@
 \usepackage{hyperref}
 \usepackage{mathtools}
 \usepackage[cache=false]{minted}
-\usepackage{tocloft}
 \usepackage{subfig}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Command definitions and redefinitions
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-% Renewed commands
-\renewcommand{\headrulewidth}{0.5pt}                   % Header rule width
-\renewcommand{\footrulewidth}{0pt}                     % Footer rule width
-\renewcommand{\baselinestretch}{1.5}                   % Line spacing is 1.5
-\renewcommand{\cftsecleader}{\cftdotfill{\cftdotsep}}  % Dots for ToC sections
-
-% Rename "Contents" to "Table of Contents"
-\addto\captionsenglish{% Replace "english" with the language used
-  \renewcommand{\contentsname}%
-    {\textbf{Table of Contents}}}%
-
-% Filling the space for centering the title of the table of contents
-\renewcommand{\cfttoctitlefont}{\hspace*{\fill}\Large}
-\renewcommand{\cftaftertoctitle}{\hspace*{\fill}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Miscellaneous
@@ -65,9 +45,7 @@
 
 % Setting stuff
 \setlength{\parindent}{0pt}  % Remove indentations from paragraphs
-\frenchspacing               % Get rid of large spaces after dots
 \pagestyle{fancy}            % This allows to do fancy headers and footers
-\fancyhf{}                   % No additional page numbering (or other stuff)
 \cfoot{\thepage}             % Display page number at the bottom, in the center
 
 % PDF information and nice-looking urls
@@ -84,8 +62,8 @@
 }
 
 % Put a centered header of a footnote size on the top of each page
-\chead{\footnotesize{\MakeUppercase{Textual and Statistical Analysis of Russian
-                                    IRA Facebook Advertisements}}}
+\chead{\footnotesize{Textual and Statistical Analysis of Russian IRA Facebook
+                     Advertisements}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Author(s), title, and date
@@ -104,7 +82,7 @@
        K. Merritt (\href{mailto:merritri@luther.edu}{merritri@luther.edu}).}
 
 % Date
-\date{Last Revised: October 24, 2019}
+\date{Last Revised: October 28, 2019}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Beginning of the document
@@ -118,8 +96,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{abstract}
-\addcontentsline{toc}{section}{Abstract}
-
 \noindent The 2016 United States Presidential Election was targeted by an
 unprecedented intelligence and influence campaign. Arising out of Russian
 so-called Internet Research Agency (IRA), it sought to sow discord, attack
@@ -138,19 +114,10 @@ nicer and easier-to-manipulate CSV format.
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Table of Contents
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\newpage
-\tableofcontents
-\newpage
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Data and Preparation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{\centering Data and Preparation}
-\addcontentsline{toc}{section}{Data and Preparation}
 
 The dataset was scraped from~\cite{ira2016data} more than 3,500 Russian IRA
 Facebook~\footnote{In the paper, words ``advertisement'' and ``post'' are used
@@ -194,7 +161,6 @@ Figure 1 categorizes them.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{\centering Word Analysis}
-\addcontentsline{toc}{section}{Word Analysis}
 
 Among the strategies utilized by this influence campaign, one that stood out
 the most was the exploitation of internal issues of the United States by
@@ -251,7 +217,6 @@ military budget.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{\centering Sentiment Analysis}
-\addcontentsline{toc}{section}{Sentiment Analysis}
 
 For sentiment analysis, we used a free and open-source \texttt{Python} library
 \texttt{TextBlob}. Interestingly, out of all Facebook posts with a non-empty
@@ -300,7 +265,6 @@ these ads. The year of the Presidential Election was rather negative.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{\centering Authorship Attribution}
-\addcontentsline{toc}{section}{Authorship Attribution}
 
 Since all of these posts were issued by the same organization/entity, it was
 interesting to see if there are some common patterns between the Facebook ads
@@ -391,7 +355,6 @@ the design strategy for these posts were roughly similar.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{\centering General Statistics}
-\addcontentsline{toc}{section}{General Statistics}
 
 The distribution of posts across all three years is of a bimodal nature with
 two peaks in quarters 2 and 4 of the year 2016. Given the fact that the US
@@ -454,7 +417,7 @@ all individuals of age 18 or more. Figure 9 shows the distribution of these ads.
 \end{figure}
 
 Surprisingly, nearly all advertisements that targeted the 15 -- 25 age category
-featured a website \url{musicfb.info} which ~\cite{musicfb-info} appears to be
+featured a website \url{musicfb.info} which~\cite{musicfb-info} appears to be
 link to a Chrome extension (currently unavailable) and was registered in Saint
 Petersburg, Russia (location of IRA). This is a notable fact since music is
 strongly linked to emotions and can be used as a powerful weapon of
@@ -465,7 +428,6 @@ manipulation.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{\centering Regression Analysis}
-\addcontentsline{toc}{section}{Regression Analysis}
 
 We would like to determine if there is a statistically significant relationship
 between two quantitative variables: the textual length of an advertisement and
@@ -555,7 +517,6 @@ depending on the number of words in the ad text section.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section*{\centering Conclusions}
-\addcontentsline{toc}{section}{Conclusions}
 
 We have scraped PDF files made publicly available by The United States House
 Permanent Select Committee on Intelligence and performed several different
@@ -573,9 +534,7 @@ person is free to use them for their research.
 
 \newpage
 
-\begin{center}
-\printbibliography[heading=bibintoc]
-\end{center}
+\printbibliography%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % The end of the document
