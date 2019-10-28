@@ -46,6 +46,7 @@
 % Setting stuff
 \setlength{\parindent}{0pt}  % Remove indentations from paragraphs
 \pagestyle{fancy}            % This allows to do fancy headers and footers
+\fancyhf{}                   % No additional page numbering (or other stuff)
 \cfoot{\thepage}             % Display page number at the bottom, in the center
 
 % PDF information and nice-looking urls
@@ -532,9 +533,9 @@ person is free to use them for their research.
 % Bibliography and References
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newpage
-
+\begin{center}
 \printbibliography%
+\end{center}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % The end of the document
