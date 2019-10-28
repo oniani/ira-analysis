@@ -97,6 +97,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{abstract}
+
 \noindent The 2016 United States Presidential Election was targeted by an
 unprecedented intelligence and influence campaign. Arising out of Russian
 so-called Internet Research Agency (IRA), it sought to sow discord, attack
@@ -112,13 +113,14 @@ but attempts to explore the methods of persuasion that were employed in this
 influence campaign.}~\cite{ira2016csvdata} In addition, we have made the data
 publicly available for other researchers and/or interested people in a much
 nicer and easier-to-manipulate CSV format.
+
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Data and Preparation
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{\centering Data and Preparation}
+\section{Data and Preparation}
 
 The dataset was scraped from~\cite{ira2016data} more than 3,500 Russian IRA
 Facebook~\footnote{In the paper, words ``advertisement'' and ``post'' are used
@@ -132,7 +134,7 @@ publicly available. It is important to note that the dataset is just a sample
 of a bigger dataset and, albeit \textit{less likely}, might not be a good
 representation of the overall campaign.
 
-\bigskip
+\medskip
 
 In total, there are 5 different sets of the datasets.
 Figure 1 categorizes them.
@@ -161,13 +163,13 @@ Figure 1 categorizes them.
 % Common Words
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{\centering Word Analysis}
+\section{Word Analysis}
 
 Among the strategies utilized by this influence campaign, one that stood out
 the most was the exploitation of internal issues of the United States by
 leveraging the social, political, and historical backgrounds of the country.
 
-\bigskip
+\medskip
 
 The word choice played a crucial role in the effectiveness of the influence
 campaign. An overwhelming number of advertisements referenced issues including
@@ -189,7 +191,7 @@ and race-based discrimination. More than 50\% of the posts referenced race and
 generated over 25 million ad impressions. Three most commonly used words were
 ``black'', ``police'', and ``people.''
 
-\bigskip
+\medskip
 
 Words associated with ``taking action'' such as ``join'', ``stop'', ``do'',
 ``follow'' etc.~were used extensively for persuasive purposes. These words in
@@ -198,7 +200,7 @@ further increased the persuasive quality of advertisements by metaphorically
 connecting them with cultural and social identities of people and fueling
 hateful rhetoric.
 
-\bigskip
+\medskip
 
 117 posts referenced words ``Clinton'' and ``Trump'' (last names of the
 presidential candidates at the time) accounting for 61,774 ad clicks and
@@ -206,7 +208,7 @@ presidential candidates at the time) accounting for 61,774 ad clicks and
 and not mentioning ``Trump'' resulting in 226 clicks and 2,182 impressions, but
 none mentioning ``Hilary'' and not ``Clinton.''
 
-\bigskip
+\medskip
 
 There was only a single ad directly referencing Russia with 135 clicks and
 1,236 impressions. The advertisement was denouncing the request for the
@@ -217,7 +219,7 @@ military budget.
 % Sentiment Analysis
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{\centering Sentiment Analysis}
+\section{Sentiment Analysis}
 
 For sentiment analysis, we used a free and open-source \texttt{Python} library
 \texttt{TextBlob}. Interestingly, out of all Facebook posts with a non-empty
@@ -226,7 +228,7 @@ leaving the overall tone of the posts positive. Yet, the claim is not strong
 or significant as the polarity levels were always near zero. Such low polarity
 levels, however, demonstrate a highly intelligent design of advertisements.
 
-\bigskip
+\medskip
 
 As the \texttt{Ad Text}s did not give us any strong evidences, we looked at the
 negativity levels across all three years and found a consistent trend (Figure 3).
@@ -265,14 +267,14 @@ these ads. The year of the Presidential Election was rather negative.
 % Authorship Attribution
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{\centering Authorship Attribution}
+\section{Authorship Attribution}
 
 Since all of these posts were issued by the same organization/entity, it was
 interesting to see if there are some common patterns between the Facebook ads
 of 2015, 2016, 2017. For this reason, we have performed authorship attribution
 tests by implementing~\cite{koppel11} the paper by Koppel et.~al.
 
-\bigskip
+\medskip
 
 We have performed 3 authorship attribution tests:
 
@@ -325,7 +327,7 @@ year 2016. The last answer shows that there is 76\% chance that the given ad,
 which was posted in 2015, was authored by the entity who wrote the posts in
 year 2016.
 
-\bigskip
+\medskip
 
 Figure 5 shows the results obtained after performing all three above-mentioned
 authorship attribution tests.
@@ -355,7 +357,7 @@ the design strategy for these posts were roughly similar.
 % General Statistics
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{\centering General Statistics}
+\section{General Statistics}
 
 The distribution of posts across all three years is of a bimodal nature with
 two peaks in quarters 2 and 4 of the year 2016. Given the fact that the US
@@ -406,7 +408,7 @@ As the information for the reader, the Russian ruble is used only in Russia,
 Belarus, and two regions of Georgia, which are considered by Russia as
 partially recognized states of Abkhazia and South Ossetia.
 
-\bigskip
+\medskip
 
 IRA was somewhat liberal toward age, with 69.542\% of advertisements targeting
 all individuals of age 18 or more. Figure 9 shows the distribution of these ads.
@@ -428,7 +430,7 @@ manipulation.
 % Regression Analysis
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{\centering Regression Analysis}
+\section{Regression Analysis}
 
 We would like to determine if there is a statistically significant relationship
 between two quantitative variables: the textual length of an advertisement and
@@ -436,7 +438,7 @@ money spent on it. Finding the relationship between these variables will give
 us an idea if there was some kind of priority attached to posts, depending on
 the textual length.
 
-\bigskip
+\medskip
 
 For this task, we use a linear regression approach. Note that we perform the
 analysis only on the ads paid in rubles, the primary reason being not having
@@ -455,8 +457,6 @@ predictor. That said, the shape of the plot hinted us to apply the log
 transformation. The log transformation, once again, verified our assumption
 of no relationship. The numerical data in Figure 10 further reinforces our
 observations.
-
-\bigskip
 
 \begin{figure}[H]
   \centering
@@ -501,13 +501,13 @@ compared to the intercept whose value is 2980.780 (RUB). The p-value equals
 $3.680 * 10^{-5}$ which is a lot smaller than $0.05$ and makes the conclusion
 statistically significant.
 
-\bigskip
+\medskip
 
 Even after performing a log transformation, the results show no evidence of a
 strong or even a weak relationship between the variables. The p-value reassures
 us that the results are statistically significant.
 
-\bigskip
+\medskip
 
 Although having no relationship is usually not the desired result, in our case,
 we can conclude that posts were designed with no noticeable priorities
@@ -517,7 +517,7 @@ depending on the number of words in the ad text section.
 % Conclusions
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section*{\centering Conclusions}
+\section{Conclusions}
 
 We have scraped PDF files made publicly available by The United States House
 Permanent Select Committee on Intelligence and performed several different
@@ -533,9 +533,7 @@ person is free to use them for their research.
 % Bibliography and References
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\begin{center}
-\printbibliography%
-\end{center}
+\printbibliography
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % The end of the document
