@@ -83,7 +83,7 @@
        K. Merritt (\href{mailto:merritri@luther.edu}{merritri@luther.edu}).}
 
 % Date
-\date{Last Revised: October 28, 2019}
+\date{Last Revised: \today}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Beginning of the document
@@ -159,6 +159,41 @@ Figure 1 categorizes them.
   \caption{Categorization of the Sets of the Datasets}
 \end{figure}
 
+All datasets are of the same shape. Below is the output of Python's pandas
+package command \mintinline{python}{dataset.dtypes}:
+
+\begin{figure}[H]
+  \begin{minted}[fontsize=\normalsize]{python}
+    import pandas as pd
+
+    data = pd.read_csv("./data/csv/all/all.csv", na_filter=False, thousands=",")
+    print(data.dtypes)
+
+    Ad ID                      int64
+    Ad Text                   object
+    Ad Landing Page           object
+    Ad Targeting Location     object
+    Excluded Connections      object
+    Age                       object
+    Language                  object
+    Placements                object
+    People Who Match          object
+    Friends of Connections    object
+    Ad Impressions             int64
+    Ad Clicks                  int64
+    Ad Spend                  object
+    Ad Creation Date          object
+    Ad End Date               object
+    dtype: object
+  \end{minted}
+  \caption{Dataset Layout}
+\end{figure}
+
+Every row represents a Facebook advertisement which has 15 different properties
+and thus, the dataset has 15 columns. Out of these columns, only 3 are integer
+values, namely ``Ad ID'', ``Ad Impressions'', and ``Ad Clicks.'' The rest of
+the columns are of the string type. This is the case for all datasets.
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Common Words
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -231,7 +266,7 @@ levels, however, demonstrate a highly intelligent design of advertisements.
 \medskip
 
 As the \texttt{Ad Text}s did not give us any strong evidences, we looked at the
-negativity levels across all three years and found a consistent trend (Figure 3).
+negativity levels across all three years and found a consistent trend (Figure 4).
 
 \begin{figure}[H]
   \centering
@@ -329,7 +364,7 @@ year 2016.
 
 \medskip
 
-Figure 5 shows the results obtained after performing all three above-mentioned
+Figure 6 shows the results obtained after performing all three above-mentioned
 authorship attribution tests.
 
 \begin{figure}[H]
@@ -383,7 +418,7 @@ quarter 3 and 2017 quarter 1 when IRA spent \$74.000 and \$35.330 respectively.
 \end{figure}
 
 Furthermore, 99.8\% of all \textit{paid} ads across all three years were paid
-in rubles. Figure 8 shows a chart with the number of posts based on currency.
+in rubles. Figure 9 shows a chart with the number of posts based on currency.
 
 \begin{figure}[H]
   \centering
@@ -411,7 +446,7 @@ partially recognized states of Abkhazia and South Ossetia.
 \medskip
 
 IRA was somewhat liberal toward age, with 69.542\% of advertisements targeting
-all individuals of age 18 or more. Figure 9 shows the distribution of these ads.
+all individuals of age 18 or more. Figure 10 shows the distribution of these ads.
 
 \begin{figure}[H]
 \centering
@@ -455,7 +490,7 @@ enough data points for USD (only 5 values).
 The first plot showed no strong relationship between the response and the
 predictor. That said, the shape of the plot hinted us to apply the log
 transformation. The log transformation, once again, verified our assumption
-of no relationship. The numerical data in Figure 10 further reinforces our
+of no relationship. The numerical data in Figure 11 further reinforces our
 observations.
 
 \begin{figure}[H]
