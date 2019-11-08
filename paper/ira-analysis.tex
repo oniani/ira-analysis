@@ -159,8 +159,8 @@ Figure 1 categorizes them.
   \caption{Categorization of the Sets of the Datasets}
 \end{figure}
 
-All datasets are of the same shape. Below is the output of Python's pandas
-package command \mintinline{python}{dataset.dtypes}:
+All datasets are of the same ``shape.'' Below is the output of Python's pandas
+package command \mintinline{python}{dataset.dtypes}.
 
 \begin{figure}[H]
   \begin{minted}[fontsize=\normalsize]{python}
@@ -336,24 +336,24 @@ Results are available in the form of JSON files formatted in the manner shown
 below.
 
 \begin{figure}[H]
-\begin{minted}[frame=single,tabsize=2,fontsize=\footnotesize]{js}
-{
-  "answers": [
-    {
-      "unknown_text": "2015-unknown1.txt",
-      "author": "candidate2016",
-      "score": 0.58
-    },
-    ...
-    {
-      "unknown_text": "2015-unknown56.txt",
-      "author": "candidate2016",
-      "score": 0.76
-    }
-  ]
-}
-\end{minted}
-\caption{JSON example}
+  \begin{minted}[frame=single,tabsize=2,fontsize=\footnotesize]{js}
+  {
+    "answers": [
+      {
+        "unknown_text": "2015-unknown1.txt",
+        "author": "candidate2016",
+        "score": 0.58
+      },
+      ...
+      {
+        "unknown_text": "2015-unknown56.txt",
+        "author": "candidate2016",
+        "score": 0.76
+      }
+    ]
+  }
+  \end{minted}
+  \caption{JSON example}
 \end{figure}
 
 The first answer tells us that the unknown text was written in year 2015, and
