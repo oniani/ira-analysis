@@ -17,7 +17,6 @@ Description:
 """
 
 import re
-import time
 import pickle
 import string
 
@@ -29,6 +28,14 @@ from sklearn.ensemble import RandomForestClassifier
 from sklearn.model_selection import train_test_split
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics import precision_recall_fscore_support as score
+
+
+def text_length(text: str) -> int:
+    """The length of the text.
+
+    This is one of the features.
+    """
+    return len(text) - text.count(" ")
 
 
 def count_punct(text: str) -> int:
@@ -63,14 +70,9 @@ def save_model(model: object, filename: str) -> None:
     pickle.dump(model, open(filename, "wb"))
 
 
-def load_model(filename: str) -> object:
-    """Load the model."""
-    return pickle.load(open(filename, "rb"))
-
-
 def main() -> None:
     """The main function."""
-    # Prepare the data
+    # Data preparation
     ira_text = pd.read_csv(
         "../data/csv/all/all.csv", na_filter=False, thousands=","
     )["Ad Text"]
@@ -82,14 +84,13 @@ def main() -> None:
 
     total_text = ira_text.append(pd.Series(non_ira_text))
 
-    labels_1 = ["ira"] * 3517
-    labels_2 = ["non-ira"] * 3517
+    labels_1, labels_2 = ["ira"] * 3517, ["non-ira"] * 3517
     labels_1.extend(labels_2)
 
     data = pd.DataFrame({"text": total_text, "label": labels_1})
 
-    # Apply the lambda functions
-    data["text_length"] = data["text"].apply(lambda x: len(x) - x.count(" "))
+    # Apply the lambda functions and create feature-columns
+    data["text_length"] = data["text"].apply(lambda x: text_length(x))
     data["punctuation%"] = data["text"].apply(lambda x: count_punct(x))
 
     # Do the 80/20 split
@@ -126,25 +127,19 @@ def main() -> None:
     # n_jobs=-1 parallelizes the execution
     rf = RandomForestClassifier(n_estimators=150, max_depth=None, n_jobs=-1)
 
-    start = time.time()
+    # Fit the model
     rf_model = rf.fit(X_train_vect, y_train)
-    end = time.time()
-    fit_time = end - start
 
     # Make prediction and test the model
-    start = time.time()
     y_pred = rf_model.predict(X_test_vect)
-    end = time.time()
-    pred_time = end - start
 
+    # Report the results
     precision, recall, fscore, train_support = score(
         y_test, y_pred, pos_label="ira", average="binary"
     )
 
     # Print the results
     print(
-        f"Fit time: {round(fit_time, 3)}\n"
-        f"Predict time: {round(pred_time, 3)}\n"
         f"Precision: {round(precision, 3)}\n"
         f"Recall: {round(recall, 3)}\n"
         f"Accuracy: {round((y_pred == y_test).sum() / len(y_pred), 3)}"

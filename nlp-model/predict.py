@@ -27,6 +27,14 @@ import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 
 
+def text_length(text: str) -> int:
+    """The length of the text.
+
+    This is one of the features.
+    """
+    return len(text) - text.count(" ")
+
+
 def count_punct(text: str) -> int:
     """Count punctuation.
 
@@ -39,6 +47,21 @@ def count_punct(text: str) -> int:
     return 0
 
 
+def clean_text(text: str) -> str:
+    """Clean up the text."""
+    ps = nltk.PorterStemmer()
+    stopwords = nltk.corpus.stopwords.words("english")
+
+    text = "".join(
+        [word.lower() for word in text if word not in string.punctuation]
+    )
+
+    tokens = re.split("\\W+", text)
+    text = [ps.stem(word) for word in tokens if word not in stopwords]
+
+    return text
+
+
 def load_model(filename: str) -> object:
     """Load the model."""
     return pickle.load(open(filename, "rb"))
@@ -46,14 +69,30 @@ def load_model(filename: str) -> object:
 
 def main() -> None:
     """The main function."""
-    text = "Hello there"  # input("Enter a text: ")
-    vectorizer = TfidfVectorizer(analyzer=clean_text)
-    vectorizer_fit = vectorizer.fit([text])
-    print(vectorizer_fit)
+    # Data preparation
+    input_text = input("Enter a text: ")
+    text = pd.Series([input_text])
+    data = pd.DataFrame({"text": text})
 
-    # model = load_model("./model.pickle")
+    # Apply the lambda functions and create feature-columns
+    data["text_length"] = data["text"].apply(lambda x: text_length(x))
+    data["punctuation%"] = data["text"].apply(lambda x: count_punct(x))
 
-    # print(model.predict(vectorizer_fit))
+    # Create a data frame
+    df = data[["text_length", "punctuation%"]]
+
+    for i in range(9038):
+        df[f"{i}"] = 0
+
+    # Load the model
+    rf_model = load_model("./model.pickle")
+
+    # Make a prediction
+    y_pred = rf_model.predict(df)
+    prediction = y_pred[0]
+
+    # Print the result
+    print(f'Text "{input_text}" is {prediction}')
 
 
 if __name__ == "__main__":
