@@ -2,7 +2,7 @@
 %
 % Filename: ira-analysis.tex
 % Author:   David Oniani
-% Modified: November 16, 2019
+% Modified: November 17, 2019
 %  _         _____   __  __
 % | |    __ |_   _|__\ \/ /
 % | |   / _` || |/ _ \\  /
@@ -549,24 +549,40 @@ we can conclude that posts were designed with no noticeable priorities
 depending on the number of words in the ad text section.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Building a Classifier
+% Binary Classifier
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Classification}
+\section{Binary Classifier}
 
-Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-Aenean porta purus et sem gravida rutrum.
-Maecenas blandit nulla ac luctus tempus.
-Nam finibus posuere ante, et lacinia massa vestibulum sit amet.
-Nulla velit arcu, efficitur quis turpis nec, sollicitudin lobortis nisi.
-Vivamus ut diam ut eros faucibus fringilla.
-Suspendisse pellentesque magna nec velit tristique sollicitudin.
-Morbi ultrices nec augue et molestie.
-Nam sapien ante, ullamcorper elementum convallis id, faucibus in lectus.
-Fusce pellentesque mollis velit efficitur porta.
-Sed finibus ligula quam, et lacinia velit posuere auctor.
-Donec ligula lorem, dictum nec lectus in, vehicula tincidunt massa.
-In hac habitasse platea dictumst.
+For the text classification purposes, we have built a binary classifier. The
+program can, with the high accuracy, tell apart IRA and non-IRA texts. Model
+has two features: text length and the number of punctuation marks. We took the
+ensemble learning approach and utilized the random forest classifier
+(\texttt{RandomForestClassifier}) from the \textit{Scikit-learn} package with
+150 estimators and unlimited depth. The non-IRA text for the separate label was
+obtained from the \texttt{textgen} package
+(\url{https://github.com/minimaxir/textgenrnn}). Figure 13 shows the measures
+of robustness of the model.
+
+\begin{figure}[H]
+  \centering
+  \begin{tabular}{*{2}{c}}
+    \toprule
+    Criterion & Value (\%)\\
+    \midrule
+    Precision & 96.2\%\\
+    \midrule
+    Recall    & 95.4\%\\
+    \midrule
+    Accuracy  & 95.7\%\\
+    \bottomrule
+  \end{tabular}
+  \caption{Precision, recall, and accuracy of the model}
+\end{figure}
+
+Besides, we have provided a simple interface for the classification of the
+textual data. The program is called \texttt{predict.py} and is available at
+\url{https://github.com/oniani/ira-analysis/blob/master/nlp-model}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Conclusions
@@ -578,7 +594,8 @@ We have scraped PDF files made publicly available by The United States House
 Permanent Select Committee on Intelligence and performed several different
 analyses including textual and statistical. The obtained results gave us
 important insights into a variety of different approaches and strategies used
-in this influence campaign. We conclude that the advertisements were designed
+in this influence campaign. We have also built a binary classifier for telling
+apart IRA and non-IRA texts. We conclude that the advertisements were designed
 in a complex and intelligent manner, targeting minorities, promoting hateful
 rhetoric, and attempting to sway the election results. Much could be analyzed
 and inferred from the provided datasets and any researcher and/or interested
