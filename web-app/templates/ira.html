@@ -6,9 +6,13 @@
   <form action="/" method="POST">
     <div class="form-row text-center">
       <div class="col">
-        Enter a text
-
-        <input type="text" class="form-control" name="text" />
+        <div class="form-group">
+          <label for="textarea"
+            >Enter a text (we recommend the minimum length of 43 words and the
+            maximum length of 420 words)</label
+          >
+          <textarea class="form-control" name="textarea" rows="3"></textarea>
+        </div>
       </div>
 
       <button
@@ -29,5 +33,17 @@
   <div class="card-body">
     <p class="card-text">{{ conclusion }}</p>
   </div>
-  {% endif %} {% endblock %}
+  {% endif %}
 </div>
+
+<br />
+
+<div class="container">
+  <p class="text-right">
+    The original code and the machine learning model available at
+    <a href="https://oniada01.herokuapp.com"
+      >https://github.com/oniani/ira-analysis</a
+    >.
+  </p>
+</div>
+{% endblock %}

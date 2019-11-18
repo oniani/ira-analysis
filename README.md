@@ -9,10 +9,12 @@ research tools, software, datasets, etc.**
 .
 ├── LICENSE        # A license for the project
 ├── data           # Data storage
-├── pdf-scraping   # Tools for PDF scraping
-├── paper          # Paper
 ├── koppel11       # Implementation of the paper "koppel11"
-└── visualization  # Programs and scripts for statistical visualizations
+├── nlp-model      # NLP model for binary classification of IRA ad texts
+├── paper          # Paper
+├── pdf-scraping   # Tools for PDF scraping
+├── visualization  # Programs and scripts for statistical visualizations
+└── web-app        # Web application using the pre-trained NLP model
 ```
 
 ## Working with Data

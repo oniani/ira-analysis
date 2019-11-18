@@ -556,7 +556,8 @@ depending on the number of words in the ad text section.
 
 For the text classification purposes, we have built a binary classifier. The
 program can, with the high accuracy, tell apart IRA and non-IRA texts. Model
-has two features: text length and the number of punctuation marks. We took the
+has three features: text length, number of punctuation marks, and the frequency
+of TOP 25 most common words discussed previously in the paper. We took the
 ensemble learning approach and utilized the random forest classifier
 (\texttt{RandomForestClassifier}) from the \textit{Scikit-learn} package with
 180 estimators and unlimited depth. The non-IRA text for the separate label was

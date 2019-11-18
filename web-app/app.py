@@ -12,6 +12,6 @@ def index():
         return render_template("ira.html")
 
     # POST
-    text = request.form.get("text")
+    text = request.form.get("textarea")
     conclusion = predict(text)
     return render_template("ira.html", conclusion=conclusion)
