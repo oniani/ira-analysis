@@ -131,7 +131,7 @@ def predict(input_text: str) -> str:
         df[f"{i}"] = 0
 
     # Load the model
-    rf_model = load_model("../nlp-model//model.pickle")
+    rf_model = load_model("../nlp-model/model.pickle")
 
     # Make a prediction
     y_pred = rf_model.predict(df)
