@@ -559,7 +559,7 @@ program can, with the high accuracy, tell apart IRA and non-IRA texts. Model
 has two features: text length and the number of punctuation marks. We took the
 ensemble learning approach and utilized the random forest classifier
 (\texttt{RandomForestClassifier}) from the \textit{Scikit-learn} package with
-150 estimators and unlimited depth. The non-IRA text for the separate label was
+180 estimators and unlimited depth. The non-IRA text for the separate label was
 obtained from the \texttt{textgen} package
 (\url{https://github.com/minimaxir/textgenrnn}). Figure 13 shows the measures
 of robustness of the model.
@@ -570,11 +570,11 @@ of robustness of the model.
     \toprule
     Criterion & Value (\%)\\
     \midrule
-    Precision & 96.2\%\\
+    Precision & 97.2\%\\
     \midrule
-    Recall    & 95.4\%\\
+    Recall    & 95.3\%\\
     \midrule
-    Accuracy  & 95.7\%\\
+    Accuracy  & 96.2\%\\
     \bottomrule
   \end{tabular}
   \caption{Precision, recall, and accuracy of the model}

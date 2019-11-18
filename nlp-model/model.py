@@ -38,7 +38,7 @@ def text_length(text: str) -> int:
     return len(text) - text.count(" ")
 
 
-def count_punct(text: str) -> int:
+def count_punctuation(text: str) -> int:
     """Count punctuation.
 
     This is one of the features.
@@ -48,6 +48,53 @@ def count_punct(text: str) -> int:
         return round(count / (len(text) - text.count(" ")), 3) * 100
 
     return 0
+
+
+def weight_value(text: str) -> str:
+    """Return a weight depending on TOP 25 common words.
+
+    This is one of the features.
+    """
+    common_words_dict = {
+        "black": 1597,
+        "police": 801,
+        "people": 476,
+        "all": 423,
+        "stop": 397,
+        "join": 388,
+        "don't": 310,
+        "more": 305,
+        "can": 294,
+        "do": 284,
+        "american": 280,
+        "matters": 264,
+        "man": 262,
+        "bm": 259,
+        "only": 254,
+        "free": 248,
+        "white": 239,
+        "community": 224,
+        "follow": 223,
+        "should": 222,
+        "how": 214,
+        "make": 206,
+        "new": 203,
+        "want": 197,
+        "video": 197,
+    }
+
+    total = sum(common_words_dict.values())
+
+    weights_dict = {}
+    for key, value in common_words_dict.items():
+        weights_dict[key] = round(value / total, 3)
+
+    weight_total = 0
+    for word in re.split("\\W+", text):
+        if word in weights_dict:
+            value += weights_dict[word]
+
+    return weight_total
 
 
 def clean_text(text: str) -> str:
@@ -91,11 +138,12 @@ def main() -> None:
 
     # Apply the lambda functions and create feature-columns
     data["text_length"] = data["text"].apply(lambda x: text_length(x))
-    data["punctuation%"] = data["text"].apply(lambda x: count_punct(x))
+    data["punctuation%"] = data["text"].apply(lambda x: count_punctuation(x))
+    data["weight"] = data["text"].apply(lambda x: weight_value(x))
 
     # Do the 80/20 split
     X_train, X_test, y_train, y_test = train_test_split(
-        data[["text", "text_length", "punctuation%"]],
+        data[["text", "text_length", "punctuation%", "weight"]],
         data["label"],
         test_size=0.2,
     )
@@ -109,7 +157,9 @@ def main() -> None:
 
     X_train_vect = pd.concat(
         [
-            X_train[["text_length", "punctuation%"]].reset_index(drop=True),
+            X_train[["text_length", "punctuation%", "weight"]].reset_index(
+                drop=True
+            ),
             pd.DataFrame(tfidf_train.toarray()),
         ],
         axis=1,
@@ -117,7 +167,9 @@ def main() -> None:
 
     X_test_vect = pd.concat(
         [
-            X_test[["text_length", "punctuation%"]].reset_index(drop=True),
+            X_test[["text_length", "punctuation%", "weight"]].reset_index(
+                drop=True
+            ),
             pd.DataFrame(tfidf_test.toarray()),
         ],
         axis=1,
@@ -125,7 +177,7 @@ def main() -> None:
 
     # Train the model using random forest classifier
     # n_jobs=-1 parallelizes the execution
-    rf = RandomForestClassifier(n_estimators=150, max_depth=None, n_jobs=-1)
+    rf = RandomForestClassifier(n_estimators=180, max_depth=None, n_jobs=-1)
 
     # Fit the model
     rf_model = rf.fit(X_train_vect, y_train)
