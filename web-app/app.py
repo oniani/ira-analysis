@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-import pyjokes
+
 from flask import Flask, request, render_template
 from predict import predict
 

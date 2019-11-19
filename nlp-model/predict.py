@@ -35,7 +35,7 @@ def text_length(text: str) -> int:
     return len(text) - text.count(" ")
 
 
-def count_punctuation(text: str) -> int:
+def count_punctuation(text: str) -> float:
     """Count punctuation.
 
     This is one of the features.
@@ -92,21 +92,6 @@ def weight_value(text: str) -> str:
             value += weights_dict[word]
 
     return weight_total
-
-
-def clean_text(text: str) -> str:
-    """Clean up the text."""
-    ps = nltk.PorterStemmer()
-    stopwords = nltk.corpus.stopwords.words("english")
-
-    text = "".join(
-        [word.lower() for word in text if word not in string.punctuation]
-    )
-
-    tokens = re.split("\\W+", text)
-    text = [ps.stem(word) for word in tokens if word not in stopwords]
-
-    return text
 
 
 def load_model(filename: str) -> object:

@@ -38,7 +38,7 @@ def text_length(text: str) -> int:
     return len(text) - text.count(" ")
 
 
-def count_punctuation(text: str) -> int:
+def count_punctuation(text: str) -> float:
     """Count punctuation.
 
     This is one of the features.
