@@ -2,7 +2,7 @@
 %
 % Filename: ira-analysis.tex
 % Author:   David Oniani
-% Modified: November 18, 2019
+% Modified: November 21, 2019
 %  _         _____   __  __
 % | |    __ |_   _|__\ \/ /
 % | |   / _` || |/ _ \\  /
@@ -562,8 +562,8 @@ ensemble learning approach and utilized the random forest classifier
 (\texttt{RandomForestClassifier}) from the \textit{Scikit-learn} package with
 180 estimators and unlimited depth. The non-IRA text for the separate label was
 obtained from the \texttt{textgen} package
-(\url{https://github.com/minimaxir/textgenrnn}). Figure 13 shows the measures
-of robustness of the model.
+(\url{https://github.com/minimaxir/textgenrnn}). Figure 13 shows the metrics
+whic are measures of robustness of the model.
 
 \begin{figure}[H]
   \centering
@@ -571,11 +571,11 @@ of robustness of the model.
     \toprule
     Criterion & Value (\%)\\
     \midrule
-    Precision & 97.2\%\\
+    Precision & 96.2\%\\
     \midrule
-    Recall    & 95.3\%\\
+    Recall    & 94.7\%\\
     \midrule
-    Accuracy  & 96.2\%\\
+    Accuracy  & 95.5\%\\
     \bottomrule
   \end{tabular}
   \caption{Precision, recall, and accuracy of the model}
@@ -583,7 +583,9 @@ of robustness of the model.
 
 Besides, we have provided a simple interface for the classification of the
 textual data. The program is called \texttt{predict.py} and is available at
-\url{https://github.com/oniani/ira-analysis/blob/master/nlp-model}.
+\url{https://github.com/oniani/ira-analysis/blob/master/nlp-model}. For
+predictions and testing purposes, we recommend the minimum length of 43 words
+and the maximum length of 420 words.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Conclusions

@@ -20,6 +20,8 @@ import re
 import pickle
 import string
 
+from typing import List
+
 import nltk
 
 import pandas as pd
@@ -50,7 +52,7 @@ def count_punctuation(text: str) -> float:
     return 0
 
 
-def weight_value(text: str) -> str:
+def weight_value(text: str) -> float:
     """Return a weight depending on TOP 25 common words.
 
     This is one of the features.
@@ -89,17 +91,17 @@ def weight_value(text: str) -> str:
     for key, value in common_words_dict.items():
         weights_dict[key] = round(value / total, 3)
 
-    weight_total = 0
+    weight_total = 0.0
     for word in re.split("\\W+", text):
         if word in weights_dict:
-            value += weights_dict[word]
+            weight_total += weights_dict[word]
 
     return weight_total
 
 
-def clean_text(text: str) -> str:
+def clean_text(text: str) -> List[str]:
     """Clean up the text."""
-    ps = nltk.PorterStemmer()
+    stemmer = nltk.PorterStemmer()
     stopwords = nltk.corpus.stopwords.words("english")
 
     text = "".join(
@@ -107,9 +109,9 @@ def clean_text(text: str) -> str:
     )
 
     tokens = re.split("\\W+", text)
-    text = [ps.stem(word) for word in tokens if word not in stopwords]
+    result = [stemmer.stem(word) for word in tokens if word not in stopwords]
 
-    return text
+    return result
 
 
 def save_model(model: object, filename: str) -> None:
@@ -137,12 +139,12 @@ def main() -> None:
     data = pd.DataFrame({"text": total_text, "label": labels_1})
 
     # Apply the lambda functions and create feature-columns
-    data["text_length"] = data["text"].apply(lambda x: text_length(x))
-    data["punctuation%"] = data["text"].apply(lambda x: count_punctuation(x))
-    data["weight"] = data["text"].apply(lambda x: weight_value(x))
+    data["text_length"] = data["text"].apply(text_length)
+    data["punctuation%"] = data["text"].apply(count_punctuation)
+    data["weight"] = data["text"].apply(weight_value)
 
     # Do the 80/20 split
-    X_train, X_test, y_train, y_test = train_test_split(
+    x_train, x_test, y_train, y_test = train_test_split(
         data[["text", "text_length", "punctuation%", "weight"]],
         data["label"],
         test_size=0.2,
@@ -150,14 +152,14 @@ def main() -> None:
 
     # Vectorization
     tfidf_vect = TfidfVectorizer(analyzer=clean_text)
-    tfidf_vect_fit = tfidf_vect.fit(X_train["text"])
+    tfidf_vect_fit = tfidf_vect.fit(x_train["text"])
 
-    tfidf_train = tfidf_vect_fit.transform(X_train["text"])
-    tfidf_test = tfidf_vect_fit.transform(X_test["text"])
+    tfidf_train = tfidf_vect_fit.transform(x_train["text"])
+    tfidf_test = tfidf_vect_fit.transform(x_test["text"])
 
-    X_train_vect = pd.concat(
+    x_train_vect = pd.concat(
         [
-            X_train[["text_length", "punctuation%", "weight"]].reset_index(
+            x_train[["text_length", "punctuation%", "weight"]].reset_index(
                 drop=True
             ),
             pd.DataFrame(tfidf_train.toarray()),
@@ -165,9 +167,9 @@ def main() -> None:
         axis=1,
     )
 
-    X_test_vect = pd.concat(
+    x_test_vect = pd.concat(
         [
-            X_test[["text_length", "punctuation%", "weight"]].reset_index(
+            x_test[["text_length", "punctuation%", "weight"]].reset_index(
                 drop=True
             ),
             pd.DataFrame(tfidf_test.toarray()),
@@ -177,16 +179,18 @@ def main() -> None:
 
     # Train the model using random forest classifier
     # n_jobs=-1 parallelizes the execution
-    rf = RandomForestClassifier(n_estimators=180, max_depth=None, n_jobs=-1)
+    random_forest = RandomForestClassifier(
+        n_estimators=180, max_depth=None, n_jobs=-1
+    )
 
     # Fit the model
-    rf_model = rf.fit(X_train_vect, y_train)
+    random_forest_model = random_forest.fit(x_train_vect, y_train)
 
     # Make prediction and test the model
-    y_pred = rf_model.predict(X_test_vect)
+    y_pred = random_forest_model.predict(x_test_vect)
 
     # Report the results
-    precision, recall, fscore, train_support = score(
+    precision, recall, _, _ = score(
         y_test, y_pred, pos_label="ira", average="binary"
     )
 
@@ -198,7 +202,7 @@ def main() -> None:
     )
 
     # Save the model
-    save_model(rf_model, "model.pickle")
+    save_model(random_forest_model, "model.pickle")
 
 
 if __name__ == "__main__":

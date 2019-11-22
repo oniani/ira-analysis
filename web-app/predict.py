@@ -20,6 +20,8 @@ import re
 import pickle
 import string
 
+from typing import Any
+
 import nltk
 
 import pandas as pd
@@ -47,7 +49,7 @@ def count_punctuation(text: str) -> float:
     return 0
 
 
-def weight_value(text: str) -> str:
+def weight_value(text: str) -> float:
     """Return a weight depending on TOP 25 common words.
 
     This is one of the features.
@@ -86,15 +88,15 @@ def weight_value(text: str) -> str:
     for key, value in common_words_dict.items():
         weights_dict[key] = round(value / total, 3)
 
-    weight_total = 0
+    weight_total = 0.0
     for word in re.split("\\W+", text):
         if word in weights_dict:
-            value += weights_dict[word]
+            weight_total += weights_dict[word]
 
     return weight_total
 
 
-def load_model(filename: str) -> object:
+def load_model(filename: str) -> Any:
     """Load the model."""
     return pickle.load(open(filename, "rb"))
 
@@ -106,20 +108,20 @@ def predict(input_text: str) -> str:
     data = pd.DataFrame({"text": text})
 
     # Apply the lambda functions and create feature-columns
-    data["text_length"] = data["text"].apply(lambda x: text_length(x))
-    data["punctuation%"] = data["text"].apply(lambda x: count_punctuation(x))
-    data["weight"] = data["text"].apply(lambda x: weight_value(x))
+    data["text_length"] = data["text"].apply(text_length)
+    data["punctuation%"] = data["text"].apply(count_punctuation)
+    data["weight"] = data["text"].apply(weight_value)
 
     # Create a data frame
-    df = data[["text_length", "punctuation%", "weight"]]
-    for i in range(8981):
-        df[f"{i}"] = 0
+    data_frame = data[["text_length", "punctuation%", "weight"]]
+    for i in range(9078):
+        data_frame[f"{i}"] = 0
 
     # Load the model
     rf_model = load_model("../nlp-model/model.pickle")
 
     # Make a prediction
-    y_pred = rf_model.predict(df)
+    y_pred = rf_model.predict(data_frame)
     prediction = y_pred[0]
 
     # Return the result
