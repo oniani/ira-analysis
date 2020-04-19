@@ -97,7 +97,6 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \begin{abstract}
-
 \noindent The 2016 United States Presidential Election was targeted by an
 unprecedented intelligence and influence campaign. Arising out of Russian
 so-called Internet Research Agency (IRA), it sought to sow discord, attack
@@ -113,7 +112,6 @@ but attempts to explore the methods of persuasion that were employed in this
 influence campaign.}~\cite{ira2016csvdata} In addition, we trained a binary
 text classifier and have made the data publicly available for other researchers
 and/or interested people in a much nicer and easier-to-manipulate CSV format.
-
 \end{abstract}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -156,7 +154,7 @@ Figure 1 categorizes them.
     year-2017 & 2017-Quarter-1.csv & 2017-Quarter-2-April.csv & 2017-Quarter-2-May.csv & 2017-Quarter-3.csv\\
     \bottomrule
   \end{tabular}
-  \caption{Categorization of the Sets of the Datasets}
+  \caption{Categorization of the Sets of the Datasets.}
 \end{figure}
 
 All datasets are of the same ``shape.'' Below is the output of Python's pandas
@@ -186,7 +184,7 @@ package command \mintinline{python}{dataset.dtypes}.
     Ad End Date               object
     dtype: object
   \end{minted}
-  \caption{Dataset Layout}
+  \caption{Dataset Layout.}
 \end{figure}
 
 Every row represents a Facebook advertisement which has 15 different properties
@@ -289,7 +287,7 @@ negativity levels across all three years and found a consistent trend (Figure 4)
     0.05 & 1 & 5 & 2 & 62.500\\
     \bottomrule
   \end{tabular}
-  \caption{Analyzing Negativity}
+  \caption{Analyzing Negativity.}
 \end{figure}
 
 Notice that for any given year and at any subjectivity level, year 2016
@@ -353,7 +351,7 @@ below.
     ]
   }
   \end{minted}
-  \caption{JSON example}
+  \caption{JSON example.}
 \end{figure}
 
 The first answer tells us that the unknown text was written in year 2015, and
@@ -382,7 +380,7 @@ authorship attribution tests.
     Average (2015, 2016, and 2017) & 67.806\%\\
     \bottomrule
   \end{tabular}
-  \caption{Average Similarity}
+  \caption{Average Similarity.}
 \end{figure}
 
 On average, there is approximately 68\% similarity across texts suggesting that
@@ -484,7 +482,7 @@ enough data points for USD (only 5 values).
   \subfloat[Money Spent VS Ad Spend Length]{{\includegraphics[width=0.5\linewidth]{./image/regression-plots/ad_spend_text_length_regression.png}}}
   \hfill
   \subfloat[Log Money Spent VS Log Ad Spend Length]{{\includegraphics[width=0.5\linewidth]{./image/regression-plots/ad_spend_text_length_regression_log_transform.png}}}
-  \caption{Simple VS Log-transformed}
+  \caption{Simple VS Log-transformed.}
 \end{figure}
 
 The first plot showed no strong relationships between the response and the
@@ -578,7 +576,7 @@ which are the measures of robustness of the model.
     Accuracy  & 95.5\\
     \bottomrule
   \end{tabular}
-  \caption{Precision, recall, and accuracy of the model}
+  \caption{Precision, recall, and accuracy of the model.}
 \end{figure}
 
 Besides, we have provided a simple interface for the classification of the
