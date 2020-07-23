@@ -1,8 +1,5 @@
 # Textual and Statistical Analysis of Russian IRA Facebook Advertisements
 
-**This repository is a workspace for developing and creating
-research tools, software, datasets, etc.**
-
 ## Organization
 
 ```zsh
@@ -66,8 +63,6 @@ Ad Spend                  object
 Ad Creation Date          object
 Ad End Date               object
 dtype: object
-
-In [5]:
 ```
 
 ## References
