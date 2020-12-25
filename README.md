@@ -79,4 +79,4 @@ dtype: object
 
 ## License
 
-[GNU General Public License v3.0](LICENSE)
+[MIT License](LICENSE)
