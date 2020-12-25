@@ -11,5 +11,5 @@ wordcloud==1.5.0
 typing==3.7.4.1
 pandas==0.24.2
 fitz==0.0.1.dev2
-Pillow==6.2.1
+Pillow==7.1.0
 scikit_learn==0.21.3
