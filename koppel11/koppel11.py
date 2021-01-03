@@ -10,9 +10,8 @@ Date: 2019-07-24 09:24:02 PM
 E-mail: onianidavid@gmail.com
 
 License:
-    The code is licensed under GNU General Public License v3.0.
-    Please read the LICENSE file in this distribution for details
-    regarding the licensing of this code.
+    The code is licensed under MIT License. Please read the LICENSE file in
+    this distribution for details regarding the licensing of this code.
 
 Description:
     This is an implementation/reproduction of the paper
