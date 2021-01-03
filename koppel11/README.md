@@ -20,4 +20,4 @@ If you use this reimplementation in your own research, please make sure to cite 
 
 ## License
 
-[GNU General Public License v3.0](../LICENSE)
+[MIT License](../LICENSE)
