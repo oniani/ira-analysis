@@ -5,17 +5,17 @@ Author: David Oniani
 Created on May 28, 2019, 09:25 PM
 
 License:
-The code is licensed under GNU General Public License v3.0.
-Please read the LICENSE file in this distribution for details
-regarding the licensing of this code.
+    The code is licensed under MIT License. Please read the LICENSE file in
+    this distribution for details regarding the licensing of this code.
 
 Description:
-This module implements 'PDFImageExctractor' class to extract images from an
-arbitrary number of PDF files. It relies on the 'fitz' module. In order to
-install the 'fitz' module, run the command: 'pip3 install pymupdf'. Also, make
-sure that the 'fitz' package is not installed. In other words, run the command
-the command 'pip3 uninstall fitz'. If there are still some errors with the
-package, try running: 'pip3 uninstall pymupdf; pip3 install pymupdf'.
+    This module implements 'PDFImageExctractor' class to extract images from an
+    arbitrary number of PDF files. It relies on the 'fitz' module. In order to
+    install the 'fitz' module, run the command: 'pip3 install pymupdf'. Also,
+    make sure that the 'fitz' package is not installed. In other words, run the
+    command the command 'pip3 uninstall fitz'. If there are still some errors
+    with the package, try running: 'pip3 uninstall pymupdf; pip3 install
+    pymupdf'.
 
 NOTE: For historical reasons, 'pymupdf' package is called 'fitz'.
 """

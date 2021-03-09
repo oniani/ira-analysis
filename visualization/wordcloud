@@ -3,7 +3,7 @@
 # Filename:     wordcloud
 # Modified:     August 14, 2019 07:11:25 PM
 # Author:       David Oniani
-# License:      GNU General Public License v3.0
+# License:      MIT
 # Descriptinon: A script to generate a wordcloud
 
 # Cleanup

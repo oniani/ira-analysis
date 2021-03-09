@@ -3,7 +3,7 @@
 # Filename:     ad_spend
 # Modified:     August 13, 2019 05:26:20 PM
 # Author:       David Oniani
-# License:      GNU General Public License v3.0
+# License:      MIT
 # Descriptinon: A script to print out the statistics for ad spendings
 
 printf "By year...\n"

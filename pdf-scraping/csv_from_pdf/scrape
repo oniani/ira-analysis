@@ -3,7 +3,7 @@
 # Filename: scrape
 # Modified: June 9, 2019 07:01:52 PM
 # Author:   David Oniani
-# License:  GNU General Public License v3.0
+# License:  MIT
 
 # Get rid of all .DS_Store files (they can halt the scraping process)
 find . -name '.DS_Store' -delete

@@ -3,7 +3,7 @@
 # Filename:     regression
 # Modified:     August 13, 2019 10:53:50 PM
 # Author:       David Oniani
-# License:      GNU General Public License v3.0
+# License:      MIT
 # Descriptinon: A script to bulk-plot linear regressions
 
 # Cleanup
